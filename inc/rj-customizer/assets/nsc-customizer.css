@@ -1,0 +1,48 @@
+.rj-customizer-toggle{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+.rj-customizer-toggle input[type="checkbox"]{
+	display: none;
+}
+.rj-toggle-btn{
+	height: 20px;
+  width: 50px;
+  border: 1px solid #a0a0a0;
+  border-radius: 21px;
+	display: flex;
+	justify-content: space-between;
+	padding-inline: 4px 8px;
+  box-sizing: border-box;
+	position: relative;
+}
+.rj-toggle-btn .onoff{
+	font-size: 10px;
+}
+.rj-circle{
+	height: 22px;
+	width: 22px;
+	background-color: #007cba;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 0.3s ease;
+}
+.rj-customizer-toggle input[type="checkbox"]:not(:checked) + .rj-toggle-btn .rj-circle{
+	left: 0;
+}
+.rj-customizer-toggle input[type="checkbox"]:checked + .rj-toggle-btn .rj-circle{
+	right: 0;
+}
+
+.rj-bookmarks-custom-separator{
+	background-color: #2271b1;
+	padding: 5px 10px;
+	border-radius: 6px;
+	color: #fff;
+	text-align: center;
+	margin-top: 10px;
+}

@@ -1,0 +1,577 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RJ Bookmarks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-06 07:45+0000\n"
+"PO-Revision-Date: 2024-04-06 07:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Language: en-US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.7; wp-6.5\n"
+"X-Domain: rj-bookmarks"
+
+#: inc/widgets/posts-categories.php:74
+msgid " Articles"
+msgstr ""
+
+#: inc/widgets/posts-categories.php:31
+#, php-format
+msgid ""
+"%1$s %2$s <a href=\"%3$s\" aria-label=\"Visit all category listing page\">"
+"%4$s </a> %5$s"
+msgstr ""
+
+#: inc/widgets/posts-tags.php:32
+#, php-format
+msgid ""
+"%1$s %2$s <a href=\"%3$s\" aria-label=\"Visit all tags listing page\">%4$s "
+"</a> %5$s"
+msgstr ""
+
+#: inc/widgets/popular-posts.php:33
+#, php-format
+msgid "%1$s %2$s <a href=\"%3$s\">%4$s </a> %5$s"
+msgstr ""
+
+#: functions.php:213
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:216
+msgid "(Edit)"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:575
+msgid "404 Error Page"
+msgstr ""
+
+#: 404.php:14 inc/rj-customizer/rj-customizer.php:586
+msgid "404 Not Found"
+msgstr ""
+
+#: inc/widgets/popular-posts.php:42 inc/widgets/posts-categories.php:40 
+#: inc/widgets/posts-tags.php:41
+msgid "5"
+msgstr ""
+
+#: functions.php:208
+#, php-format
+msgid "<b class=\"fn rj-comment-author\">%s</b>"
+msgstr ""
+
+#: inc/posts-category-image.php:38 inc/posts-category-image.php:74
+msgid "Add Image"
+msgstr ""
+
+#: functions.php:189
+msgid "Add to discussion"
+msgstr ""
+
+#: inc/widgets/posts-categories.php:63
+msgid "Articles"
+msgstr ""
+
+#: no-results.php:28 no-results.php:30
+msgid "Back to Home Page"
+msgstr ""
+
+#: inc/rj-block-patterns/rj-block-pattern-register.php:38
+msgid "Banner Section"
+msgstr ""
+
+#: search.php:44 page-template/rj-categories-list.php:29
+msgid "Categories"
+msgstr ""
+
+#: functions.php:145 page-template/rj-categories-list.php:29
+msgid "Category"
+msgstr ""
+
+#: no-results.php:17 no-results.php:19
+msgid "Click here for search"
+msgstr ""
+
+#: header.php:55
+msgid "close"
+msgstr ""
+
+#: single.php:116
+msgid "Comment Button"
+msgstr ""
+
+#: template-parts/related-posts.php:116
+msgid "comment count"
+msgstr ""
+
+#: comments.php:54
+msgid "Comments are closed."
+msgstr ""
+
+#: single.php:186
+msgid "Copy Link"
+msgstr ""
+
+#: inc/widgets/posts-categories.php:98
+msgid ""
+"Create the page and assign the template \"RJ Post Categories\" to display "
+"all the categories"
+msgstr ""
+
+#: inc/widgets/posts-tags.php:76
+msgid ""
+"Create the page and assign the template \"RJ Post Tags\" to display all the "
+"tags"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:105
+msgid "Customize"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:144
+msgid "Dark mode"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:597 
+#: inc/rj-customizer/rj-customizer.php:610
+msgid "Description"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:116 
+#: inc/rj-customizer/rj-customizer.php:129
+msgid "Direction Heading"
+msgstr ""
+
+#: no-results.php:25
+msgid "Dont worry&hellip it happens to the best of us."
+msgstr ""
+
+#: inc/widgets/social-icons.php:34
+msgid "Facebook"
+msgstr ""
+
+#: inc/widgets/social-icons.php:113
+msgid "Facebook:"
+msgstr ""
+
+#: 404.php:22 404.php:24 inc/rj-customizer/rj-customizer.php:612
+msgid "Go Back"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:61
+msgid "Header"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:584
+msgid "Heading"
+msgstr ""
+
+#: inc/posts-category-image.php:34 inc/posts-category-image.php:63
+msgid "Image"
+msgstr ""
+
+#: inc/widgets/social-icons.php:74
+msgid "Instagram"
+msgstr ""
+
+#: inc/widgets/social-icons.php:131
+msgid "Instagram:"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:198
+msgid "Latest Article"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:220
+msgid "Latest Article Description"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:207
+msgid "Latest Article Heading"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:209
+msgid "Latest Articles"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:152
+msgid "Latest Post"
+msgstr ""
+
+#: single.php:103 template-parts/related-posts.php:104
+msgid "Like Button"
+msgstr ""
+
+#: single.php:169
+msgid "Link"
+msgstr ""
+
+#: inc/widgets/social-icons.php:50
+msgid "Linkedin"
+msgstr ""
+
+#: inc/widgets/social-icons.php:125
+msgid "Linkedin:"
+msgstr ""
+
+#: 404.php:17 inc/rj-customizer/rj-customizer.php:599
+msgid ""
+"Looks like you have taken a wrong turn, Dont worry, it happens to the best "
+"of us."
+msgstr ""
+
+#: template-parts/header/menu.php:21
+msgid "menu close"
+msgstr ""
+
+#: template-parts/header/menu.php:14
+msgid "menu open"
+msgstr ""
+
+#: search.php:29
+msgid "Next page"
+msgstr ""
+
+#: page-template/rj-bookmarkss.php:108
+msgid "No posts found"
+msgstr ""
+
+#. Author of the theme
+msgid "Pritam Shinde"
+msgstr ""
+
+#: no-results.php:10
+msgid "Nothing Found"
+msgstr ""
+
+#. Name of the theme
+#: inc/rj-block-patterns/rj-block-pattern-register.php:27
+msgid "RJ Bookmarks"
+msgstr ""
+
+#: inc/rj-block-patterns/rj-block-pattern-register.php:14
+msgid "RJ Bookmarks Style"
+msgstr ""
+
+#. Name of the template
+#: page-template/rj-bookmarkss.php:2
+msgid "RJ Bookmarkss"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:56
+msgid "RJ Home Page"
+msgstr ""
+
+#. Name of the template
+#: page-template/rj-home.php:2
+msgid "RJ Homepage"
+msgstr ""
+
+#. Name of the template
+#: page-template/rj-categories-list.php:2
+msgid "RJ Post Categories"
+msgstr ""
+
+#. Name of the template
+#: page-template/rj-tags-list.php:2
+msgid "RJ Post Tags"
+msgstr ""
+
+#: inc/widgets/social-icons.php:11
+msgid "RJ Social Icon"
+msgstr ""
+
+#: inc/widgets/posts-categories.php:102
+msgid "Number of Cats to show:"
+msgstr ""
+
+#: inc/widgets/popular-posts.php:121
+msgid "Number of posts to show:"
+msgstr ""
+
+#: inc/widgets/posts-tags.php:80
+msgid "Number of tags to show:"
+msgstr ""
+
+#: template-parts/rj-theme-settings.php:14
+msgid "Open setting"
+msgstr ""
+
+#: inc/rj-block-patterns/rj-block-pattern-register.php:47
+msgid "Our Services Section"
+msgstr ""
+
+#: search.php:30 single.php:282
+msgid "Page"
+msgstr ""
+
+#: inc/widgets/social-icons.php:58
+msgid "Pinterest"
+msgstr ""
+
+#: inc/widgets/social-icons.php:137
+msgid "Pinterest:"
+msgstr ""
+
+#: inc/rj-icon-picker.php:18
+msgctxt "placeholder"
+msgid "Icon"
+msgstr ""
+
+#: template-parts/home/latest-post.php:90
+msgid "Please add the post to see this section"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:478
+msgid "Post Category/Tags"
+msgstr ""
+
+#: functions.php:134 search.php:14
+msgid "Posts"
+msgstr ""
+
+#: search.php:28
+msgid "Previous page"
+msgstr ""
+
+#: no-results.php:13
+msgid "Ready to publish your first post? Get started here."
+msgstr ""
+
+#: inc/posts-category-image.php:39 inc/posts-category-image.php:75
+msgid "Remove Image"
+msgstr ""
+
+#: comments.php:30
+msgid "Responses (%d)"
+msgstr ""
+
+#: header.php:44 searchform.php:11 searchform.php:14 searchform.php:17
+msgid "Search"
+msgstr ""
+
+#: searchform.php:10
+msgid "Search for:"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:73
+msgid "Select the Menu"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:103
+msgid "Setting Heading"
+msgstr ""
+
+#: single.php:126
+msgid "Share Button"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:428
+msgid "Show / Hide Author Details"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:251 
+#: inc/rj-customizer/rj-customizer.php:328 
+#: inc/rj-customizer/rj-customizer.php:528
+msgid "Show / Hide Author Image"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:261 
+#: inc/rj-customizer/rj-customizer.php:338 
+#: inc/rj-customizer/rj-customizer.php:538
+msgid "Show / Hide Author Name"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:488
+msgid "Show / Hide Banner"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:182 
+#: inc/rj-customizer/rj-customizer.php:231 
+#: inc/rj-customizer/rj-customizer.php:298
+msgid "Show / Hide Category"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:498
+msgid "Show / Hide Category Name"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:172 
+#: inc/rj-customizer/rj-customizer.php:368
+msgid "Show / Hide Comment Button"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:438
+msgid "Show / Hide Comment Form"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:271 
+#: inc/rj-customizer/rj-customizer.php:348
+msgid "Show / Hide Date"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:26
+msgid "Show / Hide Description"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:162 
+#: inc/rj-customizer/rj-customizer.php:358
+msgid "Show / Hide Like Button"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:388
+msgid "Show / Hide Links Button"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:408
+msgid "Show / Hide Post Content"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:508
+msgid "Show / Hide Post Count"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:548
+msgid "Show / Hide Post Date"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:318
+msgid "Show / Hide Post Excerpt"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:398 
+#: inc/rj-customizer/rj-customizer.php:518
+msgid "Show / Hide Post Image"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:418
+msgid "Show / Hide Post Tags"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:308 
+#: inc/rj-customizer/rj-customizer.php:558
+msgid "Show / Hide Post Title"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:448
+msgid "Show / Hide Related Posts"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:84
+msgid "Show / Hide Search"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:94
+msgid "Show / Hide Settings"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:378
+msgid "Show / Hide Share Button"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:281 
+#: inc/rj-customizer/rj-customizer.php:458 
+#: inc/rj-customizer/rj-customizer.php:568
+msgid "Show / Hide Sidebar"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:16 
+#: inc/rj-customizer/rj-customizer.php:192 
+#: inc/rj-customizer/rj-customizer.php:241
+msgid "Show / Hide Title"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:36
+msgid "Show Title Beside the Logo "
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:288
+msgid "Single Post Page"
+msgstr ""
+
+#: no-results.php:15
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: comments.php:62
+msgid "Submit"
+msgstr ""
+
+#: page-template/rj-tags-list.php:27
+msgid "Tag"
+msgstr ""
+
+#: page-template/rj-tags-list.php:27
+msgid "Tags"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:118 
+#: inc/rj-customizer/rj-customizer.php:131
+msgid "Theme dir"
+msgstr ""
+
+#: inc/rj-customizer/rj-customizer.php:142
+msgid "Theme Modes"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"This is the beginning of Aviationist themes. Organizations and businesses have "
+"the ability to create dynamic landing pages with endless layouts using the "
+"group and column blocks. The centered content column and fine-tuned "
+"typography also makes it perfect for traditional blogs. Complete editor "
+"styles give you a good idea of what your content will look like, even before "
+"you publish. You can give your site a personal touch by changing the "
+"background colors and the accent color in the Customizer. The colors of all "
+"elements on your site are automatically calculated based on the colors you "
+"pick, ensuring a high, accessible color contrast for your visitors."
+msgstr ""
+
+#: inc/widgets/popular-posts.php:110 inc/widgets/posts-categories.php:90 
+#: inc/widgets/posts-tags.php:69 inc/widgets/social-icons.php:107
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/social-icons.php:66
+msgid "Tumblr"
+msgstr ""
+
+#: inc/widgets/social-icons.php:143
+msgid "Tumblr:"
+msgstr ""
+
+#: inc/widgets/social-icons.php:42
+msgid "Twitter"
+msgstr ""
+
+#: inc/widgets/social-icons.php:119
+msgid "Twitter:"
+msgstr ""
+
+#: inc/widgets/popular-posts.php:115 inc/widgets/posts-categories.php:95 
+#: inc/widgets/posts-tags.php:73
+msgid "View All Button:"
+msgstr ""
+
+#: inc/widgets/social-icons.php:12
+msgid "Widget for Social icons section"
+msgstr ""
+
+#: functions.php:235
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/widgets/social-icons.php:82
+msgid "Youtube"
+msgstr ""
+
+#: inc/widgets/social-icons.php:148
+msgid "Youtube:"
+msgstr ""
