@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for RJ Bookmarks.
+ * The header for RJ Mojo.
  *
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials

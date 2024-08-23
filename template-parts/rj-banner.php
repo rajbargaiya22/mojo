@@ -17,9 +17,10 @@ get_header();
     <div class="rj-home-grid">
         <?php get_template_part('template-parts/header/site-logo'); ?>
         <div class="rj-make-ideas">
-            <span>
-        <?php /* get_template_part('template-parts/girl'); */?>
-       <img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_make_ideas_image', get_template_directory_uri() . "/assets/images/girl.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="Girl Image"></span>
+            <div class="girl-image-box">
+                <div class="light"></div>
+                <img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_make_ideas_image', get_template_directory_uri() . "/assets/images/girl.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="Girl Image">
+            </div>
             <h2><?php echo esc_html(get_theme_mod('rj_bookmarks_make_ideas_text','Make your ideas alive!'));?></h2> 
         </div>
         <?php /*		
@@ -44,7 +45,9 @@ get_header();
 
         <div class="rj-tree-text">
             <h2><?php echo esc_html(get_theme_mod('rj_bookmarks_tree_text','Play, Discover, Build and Grow'));?></h2>
-            <?php get_template_part('template-parts/tree'); ?>
+            
+            <img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_chemical_image', get_template_directory_uri() . "/assets/images/tree.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="Chemical Image">
+            <?php // get_template_part('template-parts/tree'); ?>
         </div>
 
         <div class="rj-subject-text">
@@ -61,16 +64,28 @@ get_header();
         </div>
         
         <div class="rj-world-text">
-            <?php /*<img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_world_image', get_template_directory_uri() . "/assets/images/world.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="World Image">*/?>
 
-            <?php get_template_part('template-parts/earth'); ?>
+            <div class="rotating-earth">
+
+                <img class="world-text" src="<?php echo esc_url(get_theme_mod('rj_bookmarks_world_image', get_template_directory_uri() . "/assets/images/world-text.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="World Image">
+            </div>
+
+            
+            <?php // get_template_part('template-parts/earth'); ?>
+            
             <h2><?php echo esc_html(get_theme_mod('rj_bookmarks_world_text','Changing the world is childs play'));?></h2>
         </div>
         
         <div class="rj-formula"> 
             <h2><?php echo esc_html(get_theme_mod('rj_bookmarks_formula_text','The Future belongs to the curious.'));?></h2>
-            <?php /*<img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_formula_image', get_template_directory_uri() . "/assets/images/formula.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="formula Image">*/?>
-            <?php get_template_part('template-parts/formula'); ?>
+            <?php /*
+            <img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_formula_image', get_template_directory_uri() . "/assets/images/formula.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="formula Image">
+            */ ?>
+            <div class="maths-formula">
+                <!-- <p id="rj-math-formula">E=Mc<sup>2</sup></p> -->
+                <p id="rj-math-formula"></p>
+                <?php get_template_part('template-parts/formula'); ?>
+            </div>
         </div>
     </div>
     <div class="rj-rocket-img">

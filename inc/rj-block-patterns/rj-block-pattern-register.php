@@ -1,6 +1,6 @@
 <?php
 /**
- * RJ Bookmarks: Block Patterns
+ * RJ Mojo: Block Patterns
  *
  * @package rj-bookmarks
  * @since   1.0.0
@@ -11,7 +11,7 @@
          'rj-bookmarks-style',
          array(
              'name'         => 'rj-bookmarks-style',
-             'label'        => __( 'RJ Bookmarks Style', 'rj-bookmarks' ), 'is_default'   => true,
+             'label'        => __( 'RJ Mojo Style', 'rj-bookmarks' ), 'is_default'   => true,
              'inline_style' => '.wp-block-quote.is-style-blue-quote { color: blue; }',
          )
      );
@@ -24,7 +24,7 @@ if ( function_exists( 'register_block_pattern_category' ) ) {
 
 	register_block_pattern_category(
 		'rj-bookmarks-category',
-		array( 'label' => __( 'RJ Bookmarks', 'rj-bookmarks' ) )
+		array( 'label' => __( 'RJ Mojo', 'rj-bookmarks' ) )
 	);
 }
 

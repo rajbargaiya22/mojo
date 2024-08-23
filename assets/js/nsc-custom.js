@@ -40,6 +40,36 @@ jQuery(document).ready(function($) {
 		if (scroll >= 100) sticky.addClass('header-fixed');
 		else sticky.removeClass('header-fixed');
 	});
+
+
+	const text = "E=Mc²";
+    const $element = $("#rj-math-formula");
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            if (text[index] === "²") {
+                $element.append("<sup>2</sup>");
+            } else {
+                $element.append(text.charAt(index));
+            }
+            index++;
+        } else {
+            // Reset index and clear content
+            index = 0;
+            $element.empty();
+            // Add a pause before restarting
+            setTimeout(function() {
+                typeWriter();
+            }, 1000); // 1 second pause before restarting
+            return;
+        }
+        
+        setTimeout(typeWriter, 500); // Adjust the typing speed here (milliseconds)
+    }
+
+    typeWriter();
+
 });
 
 jQuery(document).ready(function($) {
@@ -49,13 +79,6 @@ jQuery(document).ready(function($) {
     });
 });
 
-
-
-// booking form
-//   document.getElementById('visit-form').addEventListener('submit', function(e) {
-// 	e.preventDefault();
-// 	alert('Booking submitted! We will get back to you soon.');
-//   });
 
   (function($){
 	function floatLabel(inputType){
@@ -73,16 +96,6 @@ jQuery(document).ready(function($) {
 			});
 		});
 	}
-	// just add a class of "floatLabel to the input field!"
 	floatLabel(".floatLabel");
 })(jQuery);
-
-
-
-/*
-* Hey Folks, feel free to use this Code
-* You can find some more Animated Icons in my Collection
-* https://codepen.io/collection/XyyOGm/
-*/
-
 

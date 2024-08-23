@@ -36,22 +36,25 @@
         </div>
       </div>
       <?php }else { ?>
-      <?php if (get_theme_mod('rj_bookmarks_site_title', true) != 0 ){ ?>
-        <h1 class="mb-0">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr(get_bloginfo( 'name' )); ?>">
-            <?php $site_title = get_bloginfo( 'name' );
-            echo $site_title;
-            ?>
-          </a>
-        </h1>
-      <?php } ?>
 
-      <?php if (get_theme_mod('rj_bookmarks_site_description', true) != 0 ){ ?>
-        <p class="mb-0">
-            <?php $site_desc = get_bloginfo( 'description' );
-            echo $site_desc;
-            ?>
-        </p>
-      <?php }
-    } ?>
+        <div class="rj-logo">
+          <?php if (get_theme_mod('rj_bookmarks_site_title', true) != 0 ){ ?>
+            <h1 class="mb-0">
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr(get_bloginfo( 'name' )); ?>">
+                <?php $site_title = get_bloginfo( 'name' );
+                echo $site_title;
+                ?>
+              </a>
+            </h1>
+          <?php } ?>
+
+          <?php if (get_theme_mod('rj_bookmarks_site_description', true) != 0 ){ ?>
+            <p class="mb-0">
+                <?php $site_desc = get_bloginfo( 'description' );
+                echo $site_desc;
+                ?>
+            </p>
+          <?php } ?>
+        </div>
+    <?php } ?>
 

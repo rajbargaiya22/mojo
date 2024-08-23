@@ -1,6 +1,6 @@
 <?php
 /**
- * RJ Bookmarks Custom Control
+ * RJ Mojo Custom Control
  *
  */
 

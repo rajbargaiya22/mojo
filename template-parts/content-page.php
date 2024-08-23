@@ -2,7 +2,7 @@
 /**
  * The template part for displaying page content
  *
- * @package RJ Bookmarks
+ * @package RJ Mojo
  */
 
 $headh1 = get_theme_mod('rj_bookmarks_site_title', true); ?>

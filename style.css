@@ -1,5 +1,5 @@
 /*
-Theme Name: RJ Bookmarks
+Theme Name: RJ Mojo
 Theme URI:
 Author: Rajendra Bargaiya
 Author URI:
@@ -237,6 +237,13 @@ p:empty{
 }
 .rj-logo{
   background-color:#F0F0F0;
+  display: grid;
+  place-items: center;
+}
+.rj-logo h1{
+  font: 600 clamp(24px, 4vw,45px) / 1.33 'CARTOONFREE';
+  color: #0B4B96;
+  text-transform: capitalize;
 }
 .rj-logo img{
   max-height: calc(var(--height) * 4 - 60px);
@@ -249,8 +256,36 @@ p:empty{
   background-color: #7FE6BB;
   padding: clamp(20px, 3vw, 55px) 41px 31px clamp(20px, 3vw, 55px);
 }
-.rj-make-ideas img{
+.girl-image-box{
   max-height: calc(var(--height) * 4 - 80px);
+}
+.girl-image-box .light{
+  height: 50px;
+  width: 50px;
+  margin-inline-start: 36%;
+  background-image: url('./assets/images/light1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: change-light 4s linear infinite;
+}
+@keyframes change-light {
+  0%{
+    background-image: url('./assets/images/light1.png');
+  }
+  17%, 85%{
+    background-image: url('./assets/images/light2.png');
+  }
+  34%, 68%{
+    background-image: url('./assets/images/light3.png');
+  }
+  51%{
+    background-image: url('./assets/images/light4.png');
+  }
+}
+
+.rj-make-ideas img{
+  max-height: calc(var(--height) * 4 - 140px);
   object-fit: contain;
   position: relative;
   z-index: 99;
@@ -289,7 +324,8 @@ p:empty{
 .rj-menus-header{
   background-color: #FCD467;
   padding: 18px;
-  justify-content: space-evenly;
+  justify-content: end;
+  gap: 25px;
 }
 .rj-menus-header img{
   width: clamp(30px, 4vw, 50px);
@@ -306,7 +342,7 @@ p:empty{
 .rj-tree-text h2{
   font:400 clamp(23px, 2vw, 36px) / 1.5 'Chalkduster', sans-serif
 }
-.rj-tree-text svg{  
+.rj-tree-text img{  
   max-height: calc(var(--height) * 2 );
   object-fit: contain;
   width: max-content;
@@ -330,7 +366,16 @@ p:empty{
   position: absolute;
   right: 30px;
   top: 30px;
+  animation: react-rotate 50s linear infinite;
 }
+@keyframes react-rotate {
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(360deg);
+  }
+}
+
 .chemical-component svg{
   width: 100%;
   max-height: clamp(100px, 5vw, 150px);
@@ -338,6 +383,38 @@ p:empty{
 .rj-subject-text img{
   max-width: 300px;
 }
+.rotating-earth{
+  width: 200px;
+  margin: auto;
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-image: url('./assets/images/world-map.png');
+  background-color: #92d8ff;
+  background-size:cover;
+  /* box-shadow: 0 0 4px 1px #000 inset, 0 0 1px 0px #000; */
+  animation: animateEarth 40s linear infinite
+}
+@keyframes animateEarth {
+  0%
+  {
+    background-position: 0 0;
+  }
+  100%
+  {
+    background-position: 1400px 0;
+  }
+}
+.world-text{
+  position: absolute;
+  left: -36px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 270px;
+  display: block;
+  max-width: unset;
+}
+
 .rj-world-text{
   background: #fcd467;
   text-align: center;
@@ -360,10 +437,23 @@ p:empty{
   display: flex;
   flex-direction: column;
 }
-.rj-formula svg {
-  margin-inline-start: auto;
+.maths-formula{
+  position: relative;
+  text-align: end;
   max-width: 210px;
-  width: 65%;
+  margin-inline-start: auto;
+}
+.maths-formula p{
+  color: #fff;
+  font: 400 clamp(35px, 3vw, 50px) / 1.5 'Chalkduster', sans-serif;
+  position: absolute;
+  top: 66%;
+  left: 30px;
+  transform: translateY(-50%) rotate(-20deg);
+  transform-origin: left center;
+}
+.rj-formula :is(svg, img) {
+  width: 100%;
   max-height: clamp(110px, calc(var(--height)* 2), 230px);
 }
 .rj-formula h2 {
@@ -383,7 +473,7 @@ p:empty{
 /* animation */
 .rj-imagination-fly svg > g > g{
   animation: zoom-in-zoom-out 2s ease-out infinite;
-  transform-origin: center;
+  /* transform-origin: center; */
 }
 .rj-imagination-fly svg > g > g:nth-child(2){
   animation-delay: 0.1s;
@@ -409,7 +499,7 @@ p:empty{
     scale: 1;
   }
 }
-.rj-menus-header img,.rj-formula img{
+.rj-menus-header img{
   animation: zoom-in-zoom-out 1s ease-out infinite;
   transform-origin: center;
 }
@@ -443,19 +533,7 @@ p:empty{
   }
 }
 
-.rj-world-text #Group_421 {
-  animation: rotate 10s ease infinite;
-  transform-origin: center;
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.rj-formula #Group_257 #Path_11929,.rj-formula #Group_257 #Path_12133,.rj-formula #Group_257 #Path_12184,.rj-formula #Group_257 #Path_12235,
+/* .rj-formula #Group_257 #Path_11929,.rj-formula #Group_257 #Path_12133,.rj-formula #Group_257 #Path_12184,.rj-formula #Group_257 #Path_12235,
 .rj-formula #Group_257 #Path_12031,.rj-formula #Group_257 #Path_11850,.rj-formula #Group_257 #Path_12082,.rj-formula #Group_257 #Path_11980{
   animation: zoom-in-zoom-out 1s ease-out infinite;
   transform-origin: center;
@@ -470,7 +548,7 @@ p:empty{
   100% {
     scale: 1;
   }
-}
+} */
 /* about section */
 section#rj-about-section{
   background-color: #f0f0f0 !important;

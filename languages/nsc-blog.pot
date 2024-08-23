@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: RJ Bookmarks\n"
+"Project-Id-Version: RJ Mojo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-06 07:45+0000\n"
 "PO-Revision-Date: 2024-04-06 07:47+0000\n"
@@ -242,7 +242,7 @@ msgid "No posts found"
 msgstr ""
 
 #. Author of the theme
-msgid "Pritam Shinde"
+msgid "Rajendra Bargaiya"
 msgstr ""
 
 #: no-results.php:10
@@ -251,16 +251,16 @@ msgstr ""
 
 #. Name of the theme
 #: inc/rj-block-patterns/rj-block-pattern-register.php:27
-msgid "RJ Bookmarks"
+msgid "RJ Mojo"
 msgstr ""
 
 #: inc/rj-block-patterns/rj-block-pattern-register.php:14
-msgid "RJ Bookmarks Style"
+msgid "RJ Mojo Style"
 msgstr ""
 
 #. Name of the template
 #: page-template/rj-bookmarkss.php:2
-msgid "RJ Bookmarkss"
+msgid "RJ Mojos"
 msgstr ""
 
 #: inc/rj-customizer/rj-customizer.php:56

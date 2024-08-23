@@ -1,6 +1,6 @@
 <?php
 /**
- * RJ Bookmarks functions and definitions.
+ * RJ Mojo functions and definitions.
  *
  *
  * @package rj-bookmarks
@@ -26,14 +26,14 @@ function rj_bookmarks_enqueue_scripts() {
 	wp_enqueue_style( 'rj-owl-carousel', get_template_directory_uri(). '/assets/css/owl.carousel.css' );
 
 
-    wp_enqueue_script('rj-owl-carousel-js', get_template_directory_uri(). '/assets/js/owl.carousel.js',  array('jquery'), false, false);
-    wp_enqueue_script('rj-nsc-custom.js', get_template_directory_uri(). '/assets/js/nsc-custom.js', false, false);
+    wp_enqueue_script('rj-owl-carousel-js', get_template_directory_uri(). '/assets/js/owl.carousel.js',  array('jquery'), false, true);
 	wp_enqueue_script('rj-bootstrap-js', get_template_directory_uri(). '/assets/js/bootstrap.js', false, false);
-	wp_enqueue_script('rj-fontawesome-js', get_template_directory_uri(). '/assets/js/fontawesome-all-min.js', false, false);
-	wp_enqueue_script('rj-jquery-js', get_template_directory_uri(). '/assets/js/jquery-min.js', false, false);
+	wp_enqueue_script('rj-fontawesome-js', get_template_directory_uri(). '/assets/js/fontawesome-all-min.js', false, true);
+	wp_enqueue_script('rj-jquery-js', get_template_directory_uri(). '/assets/js/jquery-min.js', false, true);
 	// wp_enqueue_script('rj-slick-slider-js', get_template_directory_uri(). '/assets/js/slick.min.js', array('jquery'), false, false);
     wp_enqueue_script( 'slick-js', get_template_directory_uri(). '/assets/js/slick.js', array('jquery'), null, true);
-
+    
+    wp_enqueue_script('rj-nsc-custom.js', get_template_directory_uri(). '/assets/js/nsc-custom.js', false, true);
 	// wp_enqueue_script('jquery');
 
 
@@ -389,6 +389,7 @@ function handle_booking_form() {
                       "Number of Elders: $no_of_elders";
         
         wp_mail('kgorle@dhaninfo.biz', $admin_subject, $admin_body, $headers);
+        wp_mail('Nehall.goyal@gmail.com', $admin_subject, $admin_body, $headers);
 
         wp_redirect(home_url());
         exit;

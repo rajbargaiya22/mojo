@@ -1,5 +1,5 @@
-=== RJ Bookmarks ===
-Contributors: Pritam Shinde
+=== RJ Mojo ===
+Contributors: Rajendra Bargaiya
 Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
 Requires at least: 5.8
 Tested up to: 6.4
@@ -19,8 +19,8 @@ This is the beginning of Aviationist themes. Organizations and businesses have t
 
 == Resources ==
 
-RJ Bookmarks WordPress Theme, Copyright 2024 Pritam Shinde
-RJ Bookmarks is distributed under the terms of the GNU GPL.
+RJ Mojo WordPress Theme, Copyright 2024 Rajendra Bargaiya
+RJ Mojo is distributed under the terms of the GNU GPL.
 
 Theme is Built using the following resource bundles.
 
