@@ -4,58 +4,63 @@
  *
  * @package rj-bookmarks
  */
+get_header('two');
 
- get_header('two');
- ?>
+$category = get_queried_object();
+$color = get_term_meta($category->term_id, 'exhibit_category-color', true);
+$color = $color ? $color : "#A3D9C3";
+?>
 
- <section id="rj-air-play">
+<section id="rj-air-play">
     <div class="container py-5">
         <div class="rj-air-play-main"> 
-            <div class="">
-                <div class="rj-air-play-col">
-                    <h2 class="rj-play-heading text-center"><?php echo esc_html(get_theme_mod('rj_bookmarks_air_play_heading', 'Air Play')); ?></h2>
-                    <p class="rj-play-para"><?php echo esc_html(get_theme_mod('rj_bookmarks_air_play_text', 'Ever wondered how planes stay up in the sky? Or how air can hold things up? Discover the exciting atmosphere of flight and physics!')); ?></p>
-                    <?php
-                    $categories = get_terms(array(
-                        'taxonomy' => 'category',
-                        'hide_empty' => true,
-                    ));
-                    ?>
-                    <div class="d-flex align-items-start">
-                        <div class="nav flex-column nav-pills me-3 w-100" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <?php $active = 'active'; foreach ($categories as $category) { ?>
-                            <button class="nav-link <?php echo esc_attr($active); ?>" id="v-pills-<?php echo esc_attr($category->term_id); ?>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<?php echo esc_attr($category->term_id); ?>" type="button" role="tab" aria-controls="v-pills-<?php echo esc_attr($category->term_id); ?>" aria-selected="true"><?php echo esc_html($category->name); ?></button>
-                            <?php $active = ''; }  ?>
-                        </div>
+            <div class="rj-air-play-col" style="background-color: <?php echo $color; ?>">
+                <h2 class="rj-play-heading text-center"><?php echo $category->name; ?></h2>
+                <p class="rj-play-para">
+                    <?php echo $category->description; ?>
+                </p>
+                <?php
+                $args = array(
+                    'tax_query' => array(
+                        array(
+                            'taxonomy'  => $category->taxonomy,
+                            'field'     => 'term_id',
+                            'terms'     => $category->term_id,
+                        )
+                    ),
+                    'posts_per_page' => 8,
+                );
+                $query = new WP_Query( $args );?>
+                <div class="d-flex align-items-start">
+                    <div class="nav flex-column nav-pills w-100" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <?php $i = 1; while ( $query->have_posts() ) :  $query->the_post();  ?>
+                        <button class="nav-link <?php if($i==1){ echo 'active';} ?>" id="v-pills-<?php echo esc_attr($post->ID); ?>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<?php echo esc_attr($post->ID); ?>" type="button" role="tab" aria-controls="v-pills-<?php echo esc_attr($post->ID); ?>" aria-selected="true">
+                            <?php echo esc_html(get_the_title()); ?>
+                        </button>
+                        <?php $i++; endwhile;  ?>
                     </div>
                 </div>
             </div>
 
             <div class="rj-air-play-section">
                 <div class="tab-content" id="v-pills-tabContent">
-                    <?php $active = 'show active';
-                    foreach ($categories as $category) {
-                        $args = array(
-                            'category' => $category->term_id,
-                            'posts_per_page' => 5,
-                        );
-                        $posts = get_posts($args);
-                        ?>
-                        <div class="tab-pane fade <?php echo esc_attr($active); ?>" id="v-pills-<?php echo esc_attr($category->term_id); ?>" role="tabpanel" aria-labelledby="v-pills-<?php echo esc_attr($category->term_id); ?>-tab" tabindex="0">
-                            <h3 class="rj-play-heading-text"><?php echo esc_html($category->name); ?></h3>
-                            <?php if ($posts): ?>
-                                <?php foreach ($posts as $post): setup_postdata($post); ?>
-                                    <div class="post-item">
-                                        <h4><?php the_title(); ?></h4>
-                                        <p><?php the_excerpt(); ?></p>
-                                        <?php the_post_thumbnail(); ?>
-                                    </div>
-                                <?php endforeach; wp_reset_postdata(); ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php $active = ''; } ?>
+                <?php $i = 1; while ( $query->have_posts() ) :  $query->the_post();  ?>
+                <div class="tab-pane fade <?php if($i==1){ echo 'show active'; } ?>" id="v-pills-<?php echo esc_attr($post->ID); ?>" role="tabpanel" aria-labelledby="v-pills-<?php echo esc_attr($post->ID); ?>-tab" tabindex="0">
+                    <h3 class="rj-play-heading-text"><?php echo esc_html(get_the_title()); ?></h3>
+                    <div class="slick-slider">
+                        <?php while (have_posts()): the_post(); ?>
+                            <div class="post-item">
+                                <p><?php the_excerpt(); ?></p>
+                                <?php the_post_thumbnail(); ?>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+                <?php $i++; endwhile;  ?>
                 </div>
             </div>
+
+            
         </div>
     </div>
 </section>

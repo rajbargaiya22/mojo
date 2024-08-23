@@ -1,3 +1,4 @@
+
 // menus
 function rj_bookmarks_menu_open_nav() {
 	window.rj_bookmarks_responsiveMenu=true;
@@ -30,7 +31,7 @@ jQuery(document).ready(function($) {
     $(window).resize(function() {
         initializeOwlCarousel();
     });
-
+	
 	// Sticky Header
 	$(window).scroll(function(){
 		var sticky = $('.header-sticky'),
@@ -39,14 +40,22 @@ jQuery(document).ready(function($) {
 		if (scroll >= 100) sticky.addClass('header-fixed');
 		else sticky.removeClass('header-fixed');
 	});
-	
 });
 
+jQuery(document).ready(function($) {
+    jQuery('.slick-slider').slick({
+        dots: true,
+		nav: false,
+    });
+});
+
+
+
 // booking form
-  document.getElementById('visit-form').addEventListener('submit', function(e) {
-	e.preventDefault();
-	alert('Booking submitted! We will get back to you soon.');
-  });
+//   document.getElementById('visit-form').addEventListener('submit', function(e) {
+// 	e.preventDefault();
+// 	alert('Booking submitted! We will get back to you soon.');
+//   });
 
   (function($){
 	function floatLabel(inputType){
@@ -75,6 +84,5 @@ jQuery(document).ready(function($) {
 * You can find some more Animated Icons in my Collection
 * https://codepen.io/collection/XyyOGm/
 */
-
 
 

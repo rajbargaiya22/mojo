@@ -13,52 +13,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_template_part('template-parts/rj-banner');
 ?>
 
-
 <section id="exhibits-section">
-    <?php
-        $args = array(
-            'post_type'      => 'rj-exhibit', 
-            'posts_per_page' => 8,
-        );
-        $exhibit_query = new WP_Query($args);
-        if ($exhibit_query->have_posts()) : 
-            while ($exhibit_query->have_posts()) : $exhibit_query->the_post(); 
-            ?>
-                <div class="exhibit-item">
-                    <div class="exhibit-content">
-                        <h2 class="exhibit-heading"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-                        <?php /*the_post_thumbnail(); */?>
-                        <p class="exhibit-para"><?php the_content(); ?></p>
-                    </div>
-                    <div class="text-end">
-                        <?php $image_url = get_post_meta(get_the_ID(), 'rj_website_url', true);
-                            if ($image_url) {
-                            echo '<img src="' . esc_url($image_url) . '" alt="Exhibit Image" style="max-width: 100%; height: auto;" />';
-                        }?>
-                    </div>
-                </div>
-               
-            <?php
-            endwhile; 
-            wp_reset_postdata(); 
-        endif;
-        ?>
-</section>
-
-<section id="exhibits-section">
-    <?php
-    $terms = get_terms(array(
-        'taxonomy' => 'exhibit_category',
-        'hide_empty' => false, 
-    ));
-
-    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-        foreach ( $terms as $term ) {
-            echo '<a href="' . esc_url( get_term_link( $term ) ) . '">';
-            echo esc_html( $term->name );
+    <div class="exhibits-section container">
+        <?php
+        $terms = get_terms(array(
+            'taxonomy' => 'exhibit_category',
+            'hide_empty' => false, 
+        ));
+        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+            foreach ( $terms as $term ) {
+                $term_link = get_term_link( $term );
+                $image_id = get_term_meta($term->term_id, 'exhibit_category-image-id', true);
+                $image_url = wp_get_attachment_image_url($image_id);
+                echo '<div class="exhibit-item">';
+                    echo '<div class="exhibit-content">';
+                        echo '<a href="' . esc_url( $term_link ) . '">';
+                        echo '<h2 class="exhibit-heading">' . esc_html( $term->name ) . '</h2>';
+                        echo '</a>';
+                        if ( ! empty( $term->description ) ) {
+                            echo '<div class="exhibit-para">' . esc_html( $term->description ) . '</div>';
+                        }
+                    echo '</div>'; 
+                    if ( ! empty( $image_url ) ) {
+                        echo '<div class="text-end exhibit-img">';
+                            echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $term->name ) . '" style="max-width: 100%; height: auto;" />';
+                        echo '</div>';
+                    }
+                echo '</div>'; 
+                
+            }
         }
-    }
-    ?>
+        ?>
+    </div>
 </section>
+
+
 
 <?php get_footer();

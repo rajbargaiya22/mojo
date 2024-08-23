@@ -18,8 +18,6 @@ get_header(); ?>
     <div class="container rj-page-container">
       <div class="row">
         <div class="col-md-8">
-          <?php echo rj_bookmarks_breadcrumb(); ?>
-
           <?php while ( have_posts() ) : the_post();
               get_template_part( 'template-parts/content-page');
           endwhile; ?>
