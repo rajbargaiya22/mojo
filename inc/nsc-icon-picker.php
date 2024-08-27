@@ -1,6 +1,6 @@
 <?php
 
-class RJ_BOOKMARKS_FONT_AWESOME_ICON_PICKER extends WP_Customize_Control{
+class rj_mojo_FONT_AWESOME_ICON_PICKER extends WP_Customize_Control{
     public $type = 'icon';
 
     public function render_content(){ ?>
@@ -24,11 +24,11 @@ class RJ_BOOKMARKS_FONT_AWESOME_ICON_PICKER extends WP_Customize_Control{
 
                 <ul class="icon-list clearfix">
                     <?php
-                    $rj_bookmarks_font_awesome_icon_array = rj_bookmarks_font_awesome_icon_array();
-                    foreach ($rj_bookmarks_font_awesome_icon_array as $rj_bookmarks_font_awesome_icon) {
-                            $icon_class = $this->value() == $rj_bookmarks_font_awesome_icon ? 'icon-active' : '';
-                            echo '<li class='.esc_attr($icon_class).'><i class="'.esc_attr($rj_bookmarks_font_awesome_icon).'"></i>
-                            <span class="rj-mojo-social-class">'.esc_attr($rj_bookmarks_font_awesome_icon).'</span>
+                    $rj_mojo_font_awesome_icon_array = rj_mojo_font_awesome_icon_array();
+                    foreach ($rj_mojo_font_awesome_icon_array as $rj_mojo_font_awesome_icon) {
+                            $icon_class = $this->value() == $rj_mojo_font_awesome_icon ? 'icon-active' : '';
+                            echo '<li class='.esc_attr($icon_class).'><i class="'.esc_attr($rj_mojo_font_awesome_icon).'"></i>
+                            <span class="rj-mojo-social-class">'.esc_attr($rj_mojo_font_awesome_icon).'</span>
                             </li>';
                         }
                     ?>
@@ -39,15 +39,15 @@ class RJ_BOOKMARKS_FONT_AWESOME_ICON_PICKER extends WP_Customize_Control{
     }
 }
 
-function rj_bookmarks_customizer_script() {
+function rj_mojo_customizer_script() {
 
     wp_enqueue_style( 'rj-customizer-font-awesome', esc_url(get_template_directory_uri()).'/assets/css/fontawesome-all.css');
     wp_enqueue_script( 'rj-mojo-customizer-script', esc_url(get_template_directory_uri()).'/assets/js/customizer-scripts.js', array("jquery"),'', true  );
 }
-add_action( 'customize_controls_enqueue_scripts', 'rj_bookmarks_customizer_script' );
+add_action( 'customize_controls_enqueue_scripts', 'rj_mojo_customizer_script' );
 
-if(!function_exists('rj_bookmarks_font_awesome_icon_array')){
-    function rj_bookmarks_font_awesome_icon_array(){
+if(!function_exists('rj_mojo_font_awesome_icon_array')){
+    function rj_mojo_font_awesome_icon_array(){
         return array("", "fab fa-500px",
                          "fab fa-accusoft",
                          "fab fa-accessible-icon",

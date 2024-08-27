@@ -31,7 +31,7 @@
     <label for="searchsubmit">
       <input type="submit" id="searchsubmit" value="<?php echo esc_attr__('Search', 'rj-mojo'); ?>" class="login-signup" />
       <span class="screen-reader-text">
-        <?php echo esc_html(get_theme_mod('rj_bookmarks_search_button',__('Search','rj-mojo')));?>
+        <?php echo esc_html(get_theme_mod('rj_mojo_search_button',__('Search','rj-mojo')));?>
       </span>
     </label>
 </form>

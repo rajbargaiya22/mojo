@@ -22,11 +22,11 @@ get_template_part('template-parts/breadcrumb'); ?>
 		        $category = isset($_GET['rj-category']) ? sanitize_text_field($_GET['rj-category']) : '';
 		        $location = isset($_GET['rj-location']) ? sanitize_text_field($_GET['rj-location']) : '';
 
-						$rj_bookmarks_paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+						$rj_mojo_paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 						$args = array(
 						    'post_type' => 'post',
-								'paged' => $rj_bookmarks_paged,
+								'paged' => $rj_mojo_paged,
 						);
 
 						if (!empty($search)) {

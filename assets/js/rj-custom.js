@@ -1,11 +1,11 @@
 
 // menus
-function rj_bookmarks_menu_open_nav() {
-	window.rj_bookmarks_responsiveMenu=true;
+function rj_mojo_menu_open_nav() {
+	window.rj_mojo_responsiveMenu=true;
 	jQuery(".sidenav").addClass('show');
 }
-function rj_bookmarks_menu_close_nav() {
-	window.rj_bookmarks_responsiveMenu=false;
+function rj_mojo_menu_close_nav() {
+	window.rj_mojo_responsiveMenu=false;
  	jQuery(".sidenav").removeClass('show');
 }
 

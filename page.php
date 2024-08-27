@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-<?php do_action( 'rj_bookmarks_page_post_top' ); ?>
+<?php do_action( 'rj_mojo_page_post_top' ); ?>
 
 <main class="">
     <div class="container rj-page-container">
@@ -30,6 +30,6 @@ get_header(); ?>
     </div>
 </main>
 
-<?php do_action( 'rj_bookmarks_page_post_bottom' ); ?>
+<?php do_action( 'rj_mojo_page_post_bottom' ); ?>
 
 <?php get_footer(); ?>

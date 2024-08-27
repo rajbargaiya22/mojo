@@ -1,8 +1,8 @@
 <?php
 
-if ( ! class_exists( 'RJ_BOOKMARKS_POSTS_LOCATION_IMAGE' ) ) {
+if ( ! class_exists( 'rj_mojo_POSTS_LOCATION_IMAGE' ) ) {
 
-class RJ_BOOKMARKS_POSTS_LOCATION_IMAGE {
+class rj_mojo_POSTS_LOCATION_IMAGE {
 
   public function __construct() {
     //
@@ -13,15 +13,15 @@ class RJ_BOOKMARKS_POSTS_LOCATION_IMAGE {
   * @since 1.0.0
  */
  public function init() {
-   add_action( 'exhibit_category_add_form_fields', array ( $this, 'rj_bookmarks_add_exhibit_category_image' ), 10, 2 );
-   add_action( 'created_exhibit_category', array ( $this, 'rj_bookmarks_save_exhibit_category_image' ), 10, 2 );
-   add_action( 'exhibit_category_edit_form_fields', array ( $this, 'rj_bookmarks_update_exhibit_category_image' ), 10, 2 );
-   add_action( 'edited_exhibit_category', array ( $this, 'rj_bookmarks_updated_exhibit_category_image' ), 10, 2 );
-   add_action( 'admin_enqueue_scripts', array( $this, 'rj_bookmarks_load_media' ) );
-   add_action( 'admin_footer', array ( $this, 'rj_bookmarks_add_script' ) );
+   add_action( 'exhibit_category_add_form_fields', array ( $this, 'rj_mojo_add_exhibit_category_image' ), 10, 2 );
+   add_action( 'created_exhibit_category', array ( $this, 'rj_mojo_save_exhibit_category_image' ), 10, 2 );
+   add_action( 'exhibit_category_edit_form_fields', array ( $this, 'rj_mojo_update_exhibit_category_image' ), 10, 2 );
+   add_action( 'edited_exhibit_category', array ( $this, 'rj_mojo_updated_exhibit_category_image' ), 10, 2 );
+   add_action( 'admin_enqueue_scripts', array( $this, 'rj_mojo_load_media' ) );
+   add_action( 'admin_footer', array ( $this, 'rj_mojo_add_script' ) );
  }
 
-public function rj_bookmarks_load_media() {
+public function rj_mojo_load_media() {
  wp_enqueue_media();
 }
 
@@ -30,7 +30,7 @@ public function rj_bookmarks_load_media() {
   * @since 1.0.0
  */
 
- public function rj_bookmarks_add_exhibit_category_image ( $taxonomy ) { ?>
+ public function rj_mojo_add_exhibit_category_image ( $taxonomy ) { ?>
    <div class="form-field term-group">
      <label for="exhibit_category-image-id"><?php _e('Image', 'rj-mojo'); ?></label>
      <input type="hidden" id="exhibit_category-image-id" name="exhibit_category-image-id" class="custom_media_url" value="">
@@ -57,7 +57,7 @@ public function rj_bookmarks_load_media() {
   * Save the form field
   * @since 1.0.0
  */
- public function rj_bookmarks_save_exhibit_category_image ( $term_id, $tt_id ) {
+ public function rj_mojo_save_exhibit_category_image ( $term_id, $tt_id ) {
    if( isset( $_POST['exhibit_category-image-id'] ) && '' !== $_POST['exhibit_category-image-id'] ){
      $image = $_POST['exhibit_category-image-id'];
      add_term_meta( $term_id, 'exhibit_category-image-id', $image, true );
@@ -72,7 +72,7 @@ public function rj_bookmarks_load_media() {
   * Edit the form field
   * @since 1.0.0
  */
- public function rj_bookmarks_update_exhibit_category_image ( $term, $taxonomy ) { ?>
+ public function rj_mojo_update_exhibit_category_image ( $term, $taxonomy ) { ?>
    <tr class="form-field term-group-wrap">
      <th scope="row">
        <label for="exhibit_category-image-id"><?php _e( 'Image', 'rj-mojo' ); ?></label>
@@ -104,7 +104,7 @@ public function rj_bookmarks_load_media() {
  * Update the form field value
  * @since 1.0.0
  */
- public function rj_bookmarks_updated_exhibit_category_image ( $term_id, $tt_id ) {
+ public function rj_mojo_updated_exhibit_category_image ( $term_id, $tt_id ) {
    if( isset( $_POST['exhibit_category-image-id'] ) && '' !== $_POST['exhibit_category-image-id'] ){
      $image = $_POST['exhibit_category-image-id'];
      update_term_meta ( $term_id, 'exhibit_category-image-id', $image );
@@ -124,7 +124,7 @@ public function rj_bookmarks_load_media() {
  * Add script
  * @since 1.0.0
  */
- public function rj_bookmarks_add_script() { ?>
+ public function rj_mojo_add_script() { ?>
    <script>
      jQuery(document).ready( function($) {
        function ct_media_upload(button_class) {
@@ -178,8 +178,8 @@ public function rj_bookmarks_load_media() {
 
   }
 
-$RJ_BOOKMARKS_POSTS_LOCATION_IMAGE = new RJ_BOOKMARKS_POSTS_LOCATION_IMAGE();
-$RJ_BOOKMARKS_POSTS_LOCATION_IMAGE -> init();
+$rj_mojo_POSTS_LOCATION_IMAGE = new rj_mojo_POSTS_LOCATION_IMAGE();
+$rj_mojo_POSTS_LOCATION_IMAGE -> init();
 
 }
 

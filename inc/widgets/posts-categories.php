@@ -1,12 +1,12 @@
 <?php
-class RJ_Bookmarks_Post_Category extends WP_Widget {
+class rj_mojo_Post_Category extends WP_Widget {
 	public function __construct() {
     parent::__construct(
 			'rj-mojo-posts-cats',
 			'RJ Posts Category'
 		);
 		add_action( 'widgets_init', function() {
-			register_widget( 'RJ_Bookmarks_Post_Category' );
+			register_widget( 'rj_mojo_Post_Category' );
 		});
 	}
 
@@ -98,4 +98,4 @@ class RJ_Bookmarks_Post_Category extends WP_Widget {
 		return $instance;
 	}
 }
-$my_widget = new RJ_Bookmarks_Post_Category();
+$my_widget = new rj_mojo_Post_Category();

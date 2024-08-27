@@ -301,7 +301,7 @@ function rj_mojo_contact_us_form() {
         // Sanitize input
         $name = sanitize_text_field($_POST['name']);
         $email = sanitize_email($_POST['email']);
-        $mobile = preg_replace('/[^0-9\s\-]/', '', $_POST['mobile']);
+        $mobile = sanitize_text_field($_POST['mobile']);
         $message = sanitize_text_field($_POST['message']);
 
         // Insert data into the database

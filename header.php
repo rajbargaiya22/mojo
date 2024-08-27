@@ -13,10 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?><!DOCTYPE html>
-<?php do_action('rj_bookmarks_html'); ?>
+<?php do_action('rj_mojo_html'); ?>
 <html <?php language_attributes(); ?>>
 <head>
-<?php do_action('rj_bookmarks_head_top'); ?>
+<?php do_action('rj_mojo_head_top'); ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,11 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- <meta http-equiv="refresh" content="2"> -->
 <?php wp_head(); ?>
-<?php do_action('rj_bookmarks_head_bottom'); ?>
+<?php do_action('rj_mojo_head_bottom'); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php do_action('rj_bookmarks_body_top'); ?>
+<?php do_action('rj_mojo_body_top'); ?>
 <?php wp_body_open(); ?>
 
 <header class="rj-header">
@@ -41,6 +41,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php
 /*
-if (get_theme_mod('rj_bookmarks_header_settings', true) !='0'){
+if (get_theme_mod('rj_mojo_header_settings', true) !='0'){
 	get_template_part('template-parts/rj-theme-settings');
 } */ ?>

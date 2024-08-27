@@ -25,7 +25,7 @@ get_template_part('template-parts/rj-banner');
                 $term_link = get_term_link( $term );
                 $image_id = get_term_meta($term->term_id, 'exhibit_category-image-id', true);
                 $image_url = wp_get_attachment_image_url($image_id);
-                echo '<div class="exhibit-item">';
+                echo '<div class="exhibit-item">';~
                     echo '<div class="exhibit-content">';
                         echo '<a href="' . esc_url( $term_link ) . '">';
                         echo '<h2 class="exhibit-heading">' . esc_html( $term->name ) . '</h2>';

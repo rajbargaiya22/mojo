@@ -781,20 +781,20 @@ class Whizzie {
 			);
 
 			foreach ($topbar_icons as $title => $urlicons){
-				set_theme_mod('rj_bookmarks_topbar_'.strtolower($title).'_icon', $urlicons[1]);
-				set_theme_mod('rj_bookmarks_topbar_'.strtolower($title).'_url', $urlicons[0]);
-				set_theme_mod('rj_bookmarks_topbar_'.strtolower($title).'_text', $title);
-				set_theme_mod('rj_bookmarks_topbar_'.strtolower($title).'_color', $urlicons[0]);
+				set_theme_mod('rj_mojo_topbar_'.strtolower($title).'_icon', $urlicons[1]);
+				set_theme_mod('rj_mojo_topbar_'.strtolower($title).'_url', $urlicons[0]);
+				set_theme_mod('rj_mojo_topbar_'.strtolower($title).'_text', $title);
+				set_theme_mod('rj_mojo_topbar_'.strtolower($title).'_color', $urlicons[0]);
 			}
 
-			set_theme_mod('rj_bookmarks_topbar_submit_bookmark', 'Submit Bookmark');
-			set_theme_mod('rj_bookmarks_topbar_submit_bookmark_url', get_permalink(get_page_by_title('Submit Bookmark')));
-			set_theme_mod('rj_bookmarks_topbar_my_bookmark', 'My Bookmark');
-			set_theme_mod('rj_bookmarks_topbar_my_bookmark_url', get_permalink(get_page_by_title('My Bookmark')));
-			set_theme_mod('rj_bookmarks_topbar_my_account', 'My Account');
-			set_theme_mod('rj_bookmarks_topbar_my_account_url', get_permalink(get_page_by_title('My Account')));
-			set_theme_mod('rj_bookmarks_topbar_login_signup', 'Login/Resigter');
-			set_theme_mod('rj_bookmarks_topbar_login_signup_url', get_permalink(get_page_by_title('Add Bookmark')));
+			set_theme_mod('rj_mojo_topbar_submit_bookmark', 'Submit Bookmark');
+			set_theme_mod('rj_mojo_topbar_submit_bookmark_url', get_permalink(get_page_by_title('Submit Bookmark')));
+			set_theme_mod('rj_mojo_topbar_my_bookmark', 'My Bookmark');
+			set_theme_mod('rj_mojo_topbar_my_bookmark_url', get_permalink(get_page_by_title('My Bookmark')));
+			set_theme_mod('rj_mojo_topbar_my_account', 'My Account');
+			set_theme_mod('rj_mojo_topbar_my_account_url', get_permalink(get_page_by_title('My Account')));
+			set_theme_mod('rj_mojo_topbar_login_signup', 'Login/Resigter');
+			set_theme_mod('rj_mojo_topbar_login_signup_url', get_permalink(get_page_by_title('Add Bookmark')));
 
 			set_theme_mod('rj_bookmark_home_main_heading', 'Internet Content Powered by Business Product Marketers');
 

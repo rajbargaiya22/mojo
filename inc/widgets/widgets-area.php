@@ -2,7 +2,7 @@
 /**
  * Add a sidebar.
  */
-function rj_bookmarks_widgets_init() {
+function rj_mojo_widgets_init() {
 	$widgets_area =
 		array(
 			'Home Page' => 'Home page sidebar',
@@ -28,6 +28,6 @@ function rj_bookmarks_widgets_init() {
 		) );
 	}
 }
-add_action( 'widgets_init', 'rj_bookmarks_widgets_init' );
+add_action( 'widgets_init', 'rj_mojo_widgets_init' );
 
  ?>

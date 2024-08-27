@@ -44,7 +44,7 @@ function wpdocs_register_my_custom_menu_page() {
 add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );
 
 function rj_mojo_contact_list_html(){ ?>
-    <h1>Contact List</h1>    
+    <h1>Contact List</h1>   
     <table class="contact-table">
         <thead>
             <tr>
