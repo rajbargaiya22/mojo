@@ -33,28 +33,28 @@ $config['page_title']	= 'Get Started';
 $config['steps'] = array(
 	'intro' => array(
 		'id'			=> 'intro', // ID for section - don't rename
-		'title'			=> __( 'Welcome to ', 'rj-bookmarks' ) . $theme_title, // Section title
+		'title'			=> __( 'Welcome to ', 'rj-mojo' ) . $theme_title, // Section title
 		'icon'			=> 'dashboard', // Uses Dashicons
-		'button_text'	=> __( 'Start Now', 'rj-bookmarks' ), // Button text
+		'button_text'	=> __( 'Start Now', 'rj-mojo' ), // Button text
 		'can_skip'		=> false // Show a skip button?
 	),
 	'plugins' => array(
 		'id'			=> 'plugins',
-		'title'			=> __( 'Plugins', 'rj-bookmarks' ),
+		'title'			=> __( 'Plugins', 'rj-mojo' ),
 		'icon'			=> 'admin-plugins',
-		'button_text'	=> __( 'Install Plugins', 'rj-bookmarks' ),
+		'button_text'	=> __( 'Install Plugins', 'rj-mojo' ),
 		'can_skip'		=> true
 	),
 	'widgets' => array(
 		'id'			=> 'widgets',
-		'title'			=> __( 'Widgets', 'rj-bookmarks' ),
+		'title'			=> __( 'Widgets', 'rj-mojo' ),
 		'icon'			=> 'welcome-widgets-menus',
-		'button_text'	=> __( 'Install Widgets', 'rj-bookmarks' ),
+		'button_text'	=> __( 'Install Widgets', 'rj-mojo' ),
 		'can_skip'		=> true
 	),
 	'done' => array(
 		'id'			=> 'done',
-		'title'			=> __( 'All Done', 'rj-bookmarks' ),
+		'title'			=> __( 'All Done', 'rj-mojo' ),
 		'icon'			=> 'yes',
 	)
 );

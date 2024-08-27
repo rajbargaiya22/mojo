@@ -1,13 +1,13 @@
 <?php
 /**
- * The template for displaying search forms in rj-bookmarks
+ * The template for displaying search forms in rj-mojo
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 ?>
 
 <form role="search" method="get" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
-  <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s"  placeholder="<?php echo esc_attr__('Search...', 'rj-bookmarks'); ?>" autocomplete="off" />
+  <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s"  placeholder="<?php echo esc_attr__('Search...', 'rj-mojo'); ?>" autocomplete="off" />
 
   <?php
   $categories = get_categories( ); ?>
@@ -29,9 +29,9 @@
      <?php } ?>
    </select>
     <label for="searchsubmit">
-      <input type="submit" id="searchsubmit" value="<?php echo esc_attr__('Search', 'rj-bookmarks'); ?>" class="login-signup" />
+      <input type="submit" id="searchsubmit" value="<?php echo esc_attr__('Search', 'rj-mojo'); ?>" class="login-signup" />
       <span class="screen-reader-text">
-        <?php echo esc_html(get_theme_mod('rj_bookmarks_search_button',__('Search','rj-bookmarks')));?>
+        <?php echo esc_html(get_theme_mod('rj_bookmarks_search_button',__('Search','rj-mojo')));?>
       </span>
     </label>
 </form>

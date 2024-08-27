@@ -5,31 +5,40 @@
  */
 function wpdocs_register_my_custom_menu_page() {
 	add_menu_page(
-		__( 'Contact List', 'rj-bookmarks' ),
-		'Contact List',
+		__( 'Booking List', 'rj-mojo' ),
+		'Booking List',
 		'manage_options',
-		'rj-contact-list',
+		'rj-booking-list',
 		'rj_mojo_contact_list_html',
 		'dashicons-list-view',
         9
 	);
 
     add_submenu_page(
-        'rj-contact-list',
-        __( 'Books Time Slot', 'rj-bookmarks' ),
-        __( 'Time Slot', 'rj-bookmarks' ),
+        'rj-booking-list',
+        __( 'Books Time Slot', 'rj-mojo' ),
+        __( 'Time Slot', 'rj-mojo' ),
         'manage_options',
         'time-slot',
         'rj_mojo_time_slot_html'
     );
 
     add_submenu_page(
-        'rj-contact-list',
-        __( 'Price', 'rj-bookmarks' ),
-        __( 'Price', 'rj-bookmarks' ),
+        'rj-booking-list',
+        __( 'Price', 'rj-mojo' ),
+        __( 'Price', 'rj-mojo' ),
         'manage_options',
         'price',
         'rj_mojo_price_html'
+    );
+
+    add_submenu_page(
+        'rj-booking-list',
+        __( 'Contact', 'rj-mojo' ),
+        __( 'Contact Us', 'rj-mojo' ),
+        'manage_options',
+        'contact-us',
+        'rj_mojo_contact_us_html'
     );
 }
 add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );
@@ -182,7 +191,7 @@ add_action('wp_enqueue_scripts', 'enqueue_jquery_for_time_slots');
 add_action('admin_enqueue_scripts', 'enqueue_jquery_for_time_slots');
 
 // total cost
-function rj_mojo_price_html(){ ?>
+function rj_mojo_price_html(){ ?>`
 
     <h1>Rate</h1>
 
@@ -223,3 +232,65 @@ function handle_form_submission() {
     }
 }
 add_action('init', 'handle_form_submission');
+
+// Hpmepage contact form
+
+function rj_mojo_contact_us_html() { 
+    global $wpdb;
+
+    // Handle row deletion
+    if (isset($_POST['delete_row'])) {
+        $id_to_delete = intval($_POST['row_id']);
+        $table = $wpdb->prefix . 'contact_us';
+        $wpdb->delete($table, array('id' => $id_to_delete));
+        echo "<div class='notice notice-success'>Entry deleted successfully.</div>";
+    }
+
+    ?>
+    <h1>Contact Us</h1>    
+    <table class="contact-table">
+        <thead>
+            <tr>
+                <th class="contact-heading">Sr. No</th>
+                <th class="contact-heading">Name</th>
+                <th class="contact-heading">Email</th>
+                <th class="contact-heading">Mobile</th> 
+                <th class="contact-heading">Message</th> 
+                <th class="contact-heading">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+            $table = $wpdb->prefix . 'contact_us';
+
+            // Fetch data from the contact_us table
+            $results = $wpdb->get_results("SELECT * FROM $table", ARRAY_A);
+
+            if ($results) {
+                foreach ($results as $index => $row) {
+                    ?>
+                    <tr>
+                        <td><?php echo $index + 1; ?></td>
+                        <td><?php echo esc_html($row['name']); ?></td>
+                        <td><?php echo esc_html($row['email']); ?></td>
+                        <td><?php echo esc_html($row['mobile']); ?></td>
+                        <td><?php echo esc_html($row['message']); ?></td> 
+                        <td>
+                            <form method="post" onsubmit="return confirm('Are you sure you want to delete this entry?');">
+                                <input type="hidden" name="row_id" value="<?php echo intval($row['id']); ?>">
+                                <input type="submit" name="delete_row" value="Remove" class="button button-danger">
+                            </form>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            } else {
+                echo '<tr><td colspan="6">No contact form submissions found.</td></tr>';
+            }
+        ?>
+        </tbody>
+    </table>
+    <?php 
+}
+
+

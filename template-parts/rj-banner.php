@@ -2,7 +2,7 @@
 /*
 * Template Name: RJ Banner
 *
-* @package rj-bookmarks
+* @package rj-mojo
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ get_header();
         <?php /*		
         <div class="rj-book-seat">
             <a href="<?php echo esc_url(get_theme_mod('rj_bookmarks_book_url',false));?>">
-            <h2 class="rj-visit-text"><?php esc_html_e('Book Visit', 'rj-bookmarks'); ?></h2></a>
+            <h2 class="rj-visit-text"><?php esc_html_e('Book Visit', 'rj-mojo'); ?></h2></a>
         </div> */?>
         <div class="rj-imagination-fly">	
             <?php get_template_part('template-parts/star'); ?>

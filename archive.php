@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 get_header('two');
 

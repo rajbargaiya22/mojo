@@ -2,7 +2,7 @@
 /**
  * Wizard
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  * @author RP Leocoders Pro
  * @since 1.0.0
  */
@@ -126,17 +126,17 @@ class Whizzie {
 
 	public function enqueue_scripts(){
 		wp_enqueue_style( 'whizzie-style',get_template_directory_uri() . '/theme-wizard/assets/css/whizzie-admin-style.css', array(), time() );
-		wp_register_script( 'rj-bookmarks', get_template_directory_uri() . '/theme-wizard/assets/js/whizzie.js', array( 'jquery' ), time() );
+		wp_register_script( 'rj-mojo', get_template_directory_uri() . '/theme-wizard/assets/js/whizzie.js', array( 'jquery' ), time() );
 		wp_localize_script(
-			'rj-bookmarks',
+			'rj-mojo',
 			'whizzie_params',
 			array(
 				'ajaxurl' 		=> admin_url( 'admin-ajax.php' ),
 				'wpnonce' 		=> wp_create_nonce( 'whizzie_nonce' ),
-				'verify_text'	=> esc_html( 'verifying', 'rj-bookmarks' )
+				'verify_text'	=> esc_html( 'verifying', 'rj-mojo' )
 			)
 		);
-		wp_enqueue_script( 'rj-bookmarks' );
+		wp_enqueue_script( 'rj-mojo' );
 	}
 
 	public static function get_instance() {
@@ -224,7 +224,7 @@ class Whizzie {
 						}
 						if( isset( $content['detail'] ) ) {
 							// Add a link to see more detail
-							printf( '<p><a href="#" class="more-info">%s</a></p>', __( 'More Info', 'rj-bookmarks' ) );
+							printf( '<p><a href="#" class="more-info">%s</a></p>', __( 'More Info', 'rj-mojo' ) );
 							printf(
 								'<div class="detail">%s</div>',
 								$content['detail'] // Need to escape this
@@ -245,7 +245,7 @@ class Whizzie {
 								'<div class="button-wrap" style="margin-left: 0.5em;"><a href="#" class="button button-secondary do-it" data-callback="%s" data-step="%s">%s</a></div>',
 								'do_next_step',
 								esc_attr( $step['id'] ),
-								__( 'Skip', 'rj-bookmarks' )
+								__( 'Skip', 'rj-mojo' )
 							);
 						}
 
@@ -277,34 +277,34 @@ class Whizzie {
 		$steps = array(
 			'intro' => array(
 				'id'			=> 'intro',
-				'title'			=> __( 'Welcome to ', 'rj-bookmarks' ) . $this->theme_title,
+				'title'			=> __( 'Welcome to ', 'rj-mojo' ) . $this->theme_title,
 				'icon'			=> 'dashboard',
 				'view'			=> 'get_step_intro', // Callback for content
 				'callback'		=> 'do_next_step', // Callback for JS
-				'button_text'	=> __( 'Start Now', 'rj-bookmarks' ),
+				'button_text'	=> __( 'Start Now', 'rj-mojo' ),
 				'can_skip'		=> false // Show a skip button?
 			),
 			'plugins' => array(
 				'id'			=> 'plugins',
-				'title'			=> __( 'Plugins', 'rj-bookmarks' ),
+				'title'			=> __( 'Plugins', 'rj-mojo' ),
 				'icon'			=> 'admin-plugins',
 				'view'			=> 'get_step_plugins',
 				'callback'		=> 'install_plugins',
-				'button_text'	=> __( 'Install Plugins', 'rj-bookmarks' ),
+				'button_text'	=> __( 'Install Plugins', 'rj-mojo' ),
 				'can_skip'		=> true
 			),
 			'widgets' => array(
 				'id'			=> 'widgets',
-				'title'			=> __( 'Widgets', 'rj-bookmarks' ),
+				'title'			=> __( 'Widgets', 'rj-mojo' ),
 				'icon'			=> 'welcome-widgets-menus',
 				'view'			=> 'get_step_widgets',
 				'callback'		=> 'install_widgets',
-				'button_text'	=> __( 'Install Widgets', 'rj-bookmarks' ),
+				'button_text'	=> __( 'Install Widgets', 'rj-mojo' ),
 				'can_skip'		=> true
 			),
 			'done' => array(
 				'id'			=> 'done',
-				'title'			=> __( 'All Done', 'rj-bookmarks' ),
+				'title'			=> __( 'All Done', 'rj-mojo' ),
 				'icon'			=> 'yes',
 				'view'			=> 'get_step_done',
 				'callback'		=> ''
@@ -338,8 +338,8 @@ class Whizzie {
 	public function get_step_intro() {
 		$content = array();
 		// The summary element will be the content visible to the user
-		$content['summary'] = sprintf( '<p>%s</p>', 'Thank you for choosing to use this theme. To get you up and running as quickly as possible, you can use this wizard to configure the theme. It should only take a couple of minutes to go through all the steps, and you can choose to skip steps if you wish.', 'rj-bookmarks' );
-		$content['summary'] .= sprintf( '<p>%s</p>', 'Click the button below to get started. If you decide not to go through the wizard now, you can return to this page any time you like.', 'rj-bookmarks' );
+		$content['summary'] = sprintf( '<p>%s</p>', 'Thank you for choosing to use this theme. To get you up and running as quickly as possible, you can use this wizard to configure the theme. It should only take a couple of minutes to go through all the steps, and you can choose to skip steps if you wish.', 'rj-mojo' );
+		$content['summary'] .= sprintf( '<p>%s</p>', 'Click the button below to get started. If you decide not to go through the wizard now, you can return to this page any time you like.', 'rj-mojo' );
 		return $content;
 	}
 
@@ -353,7 +353,7 @@ class Whizzie {
 		// The summary element will be the content visible to the user
 		$content['summary'] = sprintf(
 			'<p>%s</p>',
-			__( 'This theme works best with some additional plugins. Click the button to install. You can still install or deactivate plugins later from the dashboard.', 'rj-bookmarks' )
+			__( 'This theme works best with some additional plugins. Click the button to install. You can still install or deactivate plugins later from the dashboard.', 'rj-mojo' )
 		);
 		$content = apply_filters( 'whizzie_filter_summary_content', $content );
 
@@ -391,12 +391,12 @@ class Whizzie {
 		if( $file ) {
 			$content['summary'] = sprintf(
 				'<p>%s</p>',
-				__( 'This theme adds content and functionality via widgets. Click the button to install these widgets - you can update them or deactivate at any time from the Customizer.', 'rj-bookmarks' )
+				__( 'This theme adds content and functionality via widgets. Click the button to install these widgets - you can update them or deactivate at any time from the Customizer.', 'rj-mojo' )
 			);
 		} else {
 			$content['summary'] = sprintf(
 				'<p>%s</p>',
-				__( 'No widgets.wie found.', 'rj-bookmarks' )
+				__( 'No widgets.wie found.', 'rj-mojo' )
 			);
 		}
 
@@ -410,7 +410,7 @@ class Whizzie {
 	public function get_step_done() {
 		$content = array();
 		// The summary element will be the content visible to the user
-		$content['summary'] = sprintf( '<p>%s</p>', 'Finished', 'rj-bookmarks' );
+		$content['summary'] = sprintf( '<p>%s</p>', 'Finished', 'rj-mojo' );
 		return $content;
 	}
 
@@ -460,7 +460,7 @@ class Whizzie {
 
 	public function setup_plugins() {
 		if ( ! check_ajax_referer( 'whizzie_nonce', 'wpnonce' ) || empty( $_POST['slug'] ) ) {
-			wp_send_json_error( array( 'error' => 1, 'message' => esc_html__( 'No Slug Found', 'rj-bookmarks' ) ) );
+			wp_send_json_error( array( 'error' => 1, 'message' => esc_html__( 'No Slug Found', 'rj-mojo' ) ) );
 		}
 		$json = array();
 		// send back some json we use to hit up TGM
@@ -477,7 +477,7 @@ class Whizzie {
 					'_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
 					'action'        => 'tgmpa-bulk-activate',
 					'action2'       => - 1,
-					'message'       => esc_html__( 'Activating Plugin', 'rj-bookmarks' ),
+					'message'       => esc_html__( 'Activating Plugin', 'rj-mojo' ),
 				);
 				break;
 			}
@@ -492,7 +492,7 @@ class Whizzie {
 					'_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
 					'action'        => 'tgmpa-bulk-update',
 					'action2'       => - 1,
-					'message'       => esc_html__( 'Updating Plugin', 'rj-bookmarks' ),
+					'message'       => esc_html__( 'Updating Plugin', 'rj-mojo' ),
 				);
 				break;
 			}
@@ -507,7 +507,7 @@ class Whizzie {
 					'_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
 					'action'        => 'tgmpa-bulk-install',
 					'action2'       => - 1,
-					'message'       => esc_html__( 'Installing Plugin', 'rj-bookmarks' ),
+					'message'       => esc_html__( 'Installing Plugin', 'rj-mojo' ),
 				);
 				break;
 			}
@@ -516,7 +516,7 @@ class Whizzie {
 			$json['hash'] = md5( serialize( $json ) ); // used for checking if duplicates happen, move to next plugin
 			wp_send_json( $json );
 		} else {
-			wp_send_json( array( 'done' => 1, 'message' => esc_html__( 'Success', 'rj-bookmarks' ) ) );
+			wp_send_json( array( 'done' => 1, 'message' => esc_html__( 'Success', 'rj-mojo' ) ) );
 		}
 		exit;
 	}
@@ -533,14 +533,14 @@ class Whizzie {
 
 				$menu_id = wp_create_nav_menu($menuname);
 					wp_update_nav_menu_item($menu_id, 0, array(
-						'menu-item-title' =>  __('Home','rj-bookmarks'),
+						'menu-item-title' =>  __('Home','rj-mojo'),
 						'menu-item-classes' => 'home',
 						'menu-item-url' => home_url( '/' ),
 						'menu-item-status' => 'publish'
 					));
 
 					$sub_menu  =   wp_update_nav_menu_item($menu_id, 0, array(
-						'menu-item-title' =>  __('Products','rj-bookmarks'),
+						'menu-item-title' =>  __('Products','rj-mojo'),
 						'menu-item-classes' => 'products',
 						'menu-item-url' => get_permalink(get_page_by_title('Products')),
 						'menu-item-status' => 'publish'
@@ -553,10 +553,10 @@ class Whizzie {
 
 					foreach ($sub_menu_items as $sub_menu_item) {
 						wp_update_nav_menu_item($menu_id, 0, array(
-							'menu-item-title' =>  __($sub_menu_item->name,'rj-bookmarks'),
-							'menu-item-attr-title' =>  __($sub_menu_item->name,'rj-bookmarks'),
+							'menu-item-title' =>  __($sub_menu_item->name,'rj-mojo'),
+							'menu-item-attr-title' =>  __($sub_menu_item->name,'rj-mojo'),
 							// 'menu-item-classes' => $mid['class'],
-							'menu-item-url' => __(get_category_link( $category->term_id ),'rj-bookmarks'),
+							'menu-item-url' => __(get_category_link( $category->term_id ),'rj-mojo'),
 							'menu-item-status' => 'publish',
 							'menu-item-parent-id' => $sub_menu
 						));
@@ -577,7 +577,7 @@ class Whizzie {
 
 					// foreach ($sub_menu_items as $mname => $mid) {
 					// 	wp_update_nav_menu_item($menu_id, 0, array(
-					// 		'menu-item-title' =>  __($mname,'rj-bookmarks'),
+					// 		'menu-item-title' =>  __($mname,'rj-mojo'),
 					// 		'menu-item-attr-title' =>  rj_bookmark_theme_path . '/assets/images/leocoders_products/'.$mid['title'],
 					// 		'menu-item-classes' => $mid['class'],
 					// 		'menu-item-url' => get_permalink(get_page_by_title('Products')) . '/#tab-'.$mid['class'],
@@ -587,14 +587,14 @@ class Whizzie {
 					// }
 
 					wp_update_nav_menu_item($menu_id, 0, array(
-						'menu-item-title' =>  __('Social Sites','rj-bookmarks'),
+						'menu-item-title' =>  __('Social Sites','rj-mojo'),
 						'menu-item-classes' => 'social-Sites',
 						'menu-item-url' => get_permalink(get_page_by_title('Social Sites')),
 						'menu-item-status' => 'publish'
 					));
 
 					wp_update_nav_menu_item($menu_id, 0, array(
-						'menu-item-title' =>  __('Contact','rj-bookmarks'),
+						'menu-item-title' =>  __('Contact','rj-mojo'),
 						'menu-item-classes' => 'contact',
 						'menu-item-url' => get_permalink(get_page_by_title('Contact Us')),
 						'menu-item-status' => 'publish'
@@ -630,7 +630,7 @@ class Whizzie {
 
 				foreach ($sub_menu_items as $mname => $mid) {
 					wp_update_nav_menu_item($menu_id, 0, array(
-						'menu-item-title' =>  __($mname,'rj-bookmarks'),
+						'menu-item-title' =>  __($mname,'rj-mojo'),
 						'menu-item-attr-title' =>  rj_bookmark_theme_path . '/assets/images/leocoders_products/'.$mid['title'],
 						'menu-item-classes' => $mid['class'],
 						'menu-item-url' => get_permalink(get_page_by_title('Products')) . '/#tab-'.$mid['class'],

@@ -2,7 +2,7 @@
 /*
 * Template parts to topbar
 *
-* @package rj-bookmarks
+* @package rj-mojo
 */
 ?>
 

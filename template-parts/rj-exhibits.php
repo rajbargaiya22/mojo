@@ -2,7 +2,7 @@
 /*
 * Template Name: RJ Exhibits
 *
-* @package rj-bookmarks
+* @package rj-mojo
 */
 
 if ( ! defined( 'ABSPATH' ) ) {

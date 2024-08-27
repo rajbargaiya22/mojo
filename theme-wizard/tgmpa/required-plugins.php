@@ -8,7 +8,7 @@ require get_template_directory() . '/theme-wizard/tgmpa/class-tgm-plugin-activat
 function rb_farm_pro_register_recommended_plugins() {
 	$plugins = array(
 		array(
-			'name'             => __( 'Contact Form 7', 'rj-bookmarks' ),
+			'name'             => __( 'Contact Form 7', 'rj-mojo' ),
 			'slug'             => 'contact-form-7',
 			'required'         => true,
 			'force_activation' => false,

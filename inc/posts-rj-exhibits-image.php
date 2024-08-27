@@ -32,18 +32,18 @@ public function rj_bookmarks_load_media() {
 
  public function rj_bookmarks_add_exhibit_category_image ( $taxonomy ) { ?>
    <div class="form-field term-group">
-     <label for="exhibit_category-image-id"><?php _e('Image', 'rj-bookmarks'); ?></label>
+     <label for="exhibit_category-image-id"><?php _e('Image', 'rj-mojo'); ?></label>
      <input type="hidden" id="exhibit_category-image-id" name="exhibit_category-image-id" class="custom_media_url" value="">
      <div id="exhibit_category-image-wrapper"></div>
      <p>
-       <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'rj-bookmarks' ); ?>" />
-       <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'rj-bookmarks' ); ?>" />
+       <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'rj-mojo' ); ?>" />
+       <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'rj-mojo' ); ?>" />
     </p>
 
 
     <p>   
        
-    <label for="exhibit_category-color"><?php _e('Color', 'rj-bookmarks'); ?></label>
+    <label for="exhibit_category-color"><?php _e('Color', 'rj-mojo'); ?></label>
     <input type="color" name="exhibit_category-color" value="" id="exhibit_category-color">
     </p>
    </div>
@@ -75,7 +75,7 @@ public function rj_bookmarks_load_media() {
  public function rj_bookmarks_update_exhibit_category_image ( $term, $taxonomy ) { ?>
    <tr class="form-field term-group-wrap">
      <th scope="row">
-       <label for="exhibit_category-image-id"><?php _e( 'Image', 'rj-bookmarks' ); ?></label>
+       <label for="exhibit_category-image-id"><?php _e( 'Image', 'rj-mojo' ); ?></label>
      </th>
      <td>
        <?php $image_id = get_term_meta( $term -> term_id, 'exhibit_category-image-id', true ); ?>
@@ -86,13 +86,13 @@ public function rj_bookmarks_load_media() {
          <?php } ?>
        </div>
        <p>
-         <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'rj-bookmarks' ); ?>" />
-         <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'rj-bookmarks' ); ?>" />
+         <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'rj-mojo' ); ?>" />
+         <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'rj-mojo' ); ?>" />
        </p>
 
        <p>
        <?php $color = get_term_meta( $term -> term_id, 'exhibit_category-color', true ); ?>
-      <label for="exhibit_category-color"><?php _e('Color', 'rj-bookmarks'); ?></label>
+      <label for="exhibit_category-color"><?php _e('Color', 'rj-mojo'); ?></label>
       <input type="color" name="exhibit_category-color" value="<?php echo $color; ?>">
     </p>
      </td>

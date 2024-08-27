@@ -12,7 +12,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback' => 'rj_bookmarks_toggle_sanitization'
 	));
 	$wp_customize->add_control( new RJ_BOOKMARKS_TOGGLE_SWITCH_CUSTOM_CONTROL( $wp_customize, 'rj_bookmarks_site_title',array(
-		'label' => esc_html__( 'Show / Hide Title','rj-bookmarks' ),
+		'label' => esc_html__( 'Show / Hide Title','rj-mojo' ),
 		'section' => 'title_tagline'
 	)));
 
@@ -22,7 +22,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback' => 'rj_bookmarks_toggle_sanitization'
 	));
 	$wp_customize->add_control( new RJ_BOOKMARKS_TOGGLE_SWITCH_CUSTOM_CONTROL( $wp_customize, 'rj_bookmarks_site_description',array(
-		'label' => esc_html__( 'Show / Hide Description','rj-bookmarks' ),
+		'label' => esc_html__( 'Show / Hide Description','rj-mojo' ),
 		'section' => 'title_tagline'
 	)));
 
@@ -32,7 +32,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback' => 'rj_bookmarks_toggle_sanitization'
 	));
 	$wp_customize->add_control( new RJ_BOOKMARKS_TOGGLE_SWITCH_CUSTOM_CONTROL( $wp_customize, 'rj_bookmarks_site_content_aside',array(
-		'label' => esc_html__( 'Show Title Beside the Logo ','rj-bookmarks' ),
+		'label' => esc_html__( 'Show Title Beside the Logo ','rj-mojo' ),
 		'section' => 'title_tagline'
 	)));
 
@@ -40,13 +40,13 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 	$wp_customize->add_panel( 'rj_bookmarks_panel_id', array(
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
-		'title' => esc_html__( 'Homepage Settings', 'rj-bookmarks' ),
+		'title' => esc_html__( 'Homepage Settings', 'rj-mojo' ),
 		'priority' => 10,
 	));
 
 	// banner setting
 	$wp_customize->add_section( 'rj_bookmarks_banner_section' , array(
-		'title'      => __( 'Banner Section', 'rj-bookmarks' ),
+		'title'      => __( 'Banner Section', 'rj-mojo' ),
 		'priority'   => null,
 		'panel' => 'rj_bookmarks_panel_id'
 	) );
@@ -58,7 +58,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_make_ideas_image',array(
-        'label' => __('Girl Image','rj-bookmarks'),
+        'label' => __('Girl Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -67,9 +67,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_make_ideas_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Make your ideas alive!', 'rj-bookmarks' ),
+			'placeholder' => __( 'Make your ideas alive!', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -82,7 +82,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_star_image',array(
-        'label' => __('Star Image','rj-bookmarks'),
+        'label' => __('Star Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -91,9 +91,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_star_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Let your imagination fly', 'rj-bookmarks' ),
+			'placeholder' => __( 'Let your imagination fly', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -106,7 +106,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_facebook_image',array(
-        'label' => __('Facebook Image','rj-bookmarks'),
+        'label' => __('Facebook Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -115,7 +115,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_product_facebook_url',array(
-		'label'	=> esc_html__('Facebook Url','rj-bookmarks'),
+		'label'	=> esc_html__('Facebook Url','rj-mojo'),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
 	));
@@ -127,7 +127,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_instagram_image',array(
-        'label' => __('Instagram Image','rj-bookmarks'),
+        'label' => __('Instagram Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -136,7 +136,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_product_instagram_url',array(
-		'label'	=> esc_html__('Instagram Url','rj-bookmarks'),
+		'label'	=> esc_html__('Instagram Url','rj-mojo'),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
 	));
@@ -146,9 +146,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_tree_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Play, Discover, Build and Grow', 'rj-bookmarks' ),
+			'placeholder' => __( 'Play, Discover, Build and Grow', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -161,7 +161,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_tree_image',array(
-        'label' => __('Tree Image','rj-bookmarks'),
+        'label' => __('Tree Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -172,7 +172,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_chemical_component_image',array(
-        'label' => __('Chemical Component Image','rj-bookmarks'),
+        'label' => __('Chemical Component Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -181,9 +181,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_science_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Science', 'rj-bookmarks' ),
+			'placeholder' => __( 'Science', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -194,9 +194,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_technology_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Technology', 'rj-bookmarks' ),
+			'placeholder' => __( 'Technology', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -207,9 +207,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_engineering_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Engineering', 'rj-bookmarks' ),
+			'placeholder' => __( 'Engineering', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -220,9 +220,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_arts_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Arts', 'rj-bookmarks' ),
+			'placeholder' => __( 'Arts', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -233,9 +233,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_mathematics_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Mathematics', 'rj-bookmarks' ),
+			'placeholder' => __( 'Mathematics', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -248,7 +248,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_chemical_image',array(
-        'label' => __('Chemical Image','rj-bookmarks'),
+        'label' => __('Chemical Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -259,7 +259,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_world_image',array(
-        'label' => __('World Image','rj-bookmarks'),
+        'label' => __('World Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -268,9 +268,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_world_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Changing the world is childs play', 'rj-bookmarks' ),
+			'placeholder' => __( 'Changing the world is childs play', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -283,7 +283,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_formula_image',array(
-        'label' => __('formula Image','rj-bookmarks'),
+        'label' => __('formula Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
@@ -292,9 +292,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_formula_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'The Future belongs to the curious.', 'rj-bookmarks' ),
+			'placeholder' => __( 'The Future belongs to the curious.', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_banner_section',
 		'type'=> 'text'
@@ -307,13 +307,13 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_about_image',array(
-        'label' => __('About Image','rj-bookmarks'),
+        'label' => __('About Image','rj-mojo'),
         'section' => 'rj_bookmarks_banner_section'
 	)));
 
 	// About setting
 	$wp_customize->add_section( 'rj_bookmarks_about_section' , array(
-		'title'      => __( 'About Section', 'rj-bookmarks' ),
+		'title'      => __( 'About Section', 'rj-mojo' ),
 		'priority'   => null,
 		'panel' => 'rj_bookmarks_panel_id'
 	) );
@@ -323,9 +323,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_about_us_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'About Us', 'rj-bookmarks' ),
+			'placeholder' => __( 'About Us', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'text'
@@ -337,9 +337,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 	));
 	
 	$wp_customize->add_control('rj_bookmarks_museum_heading',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Welcome to Nagpurs Pride and Joy — The Museum of Joy!', 'rj-bookmarks' ),
+			'placeholder' => __( 'Welcome to Nagpurs Pride and Joy — The Museum of Joy!', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'text'
@@ -352,7 +352,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_museum_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'textarea'
 	));
@@ -362,9 +362,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_our_mission_heading',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Our Mission', 'rj-bookmarks' ),
+			'placeholder' => __( 'Our Mission', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'text'
@@ -377,7 +377,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_our_mission_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'textarea'
 	));
@@ -387,9 +387,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_our_programs_heading',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Our Programs', 'rj-bookmarks' ),
+			'placeholder' => __( 'Our Programs', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'text'
@@ -402,7 +402,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_our_programs_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'textarea'
 	));
@@ -412,9 +412,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_our_inspiration_heading',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Our Inspiration', 'rj-bookmarks' ),
+			'placeholder' => __( 'Our Inspiration', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'text'
@@ -427,7 +427,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_our_inspiration_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'textarea'
 	));
@@ -437,9 +437,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_our_join_us_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Join us on this joyous journey where imagination comes to life!', 'rj-bookmarks' ),
+			'placeholder' => __( 'Join us on this joyous journey where imagination comes to life!', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_about_section',
 		'type'=> 'text'
@@ -447,7 +447,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 
 	// Footer setting
 	$wp_customize->add_section( 'rj_bookmarks_footer_section' , array(
-		'title'      => __( 'Footer Section', 'rj-bookmarks' ),
+		'title'      => __( 'Footer Section', 'rj-mojo' ),
 		'priority'   => null,
 		'panel' => 'rj_bookmarks_panel_id'
 	) );
@@ -459,7 +459,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_location_image',array(
-        'label' => __('Location Image','rj-bookmarks'),
+        'label' => __('Location Image','rj-mojo'),
         'section' => 'rj_bookmarks_footer_section'
 	)));
 
@@ -468,9 +468,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_location_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Location', 'rj-bookmarks' ),
+			'placeholder' => __( 'Location', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_footer_section',
 		'type'=> 'text'
@@ -481,9 +481,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_address_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Museum Of Joy Dhandhania House East High Court Civil Lines 440001 Nagpur', 'rj-bookmarks' ),
+			'placeholder' => __( 'Museum Of Joy Dhandhania House East High Court Civil Lines 440001 Nagpur', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_footer_section',
 		'type'=> 'text'
@@ -495,7 +495,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_contact_image',array(
-        'label' => __('contact Image','rj-bookmarks'),
+        'label' => __('contact Image','rj-mojo'),
         'section' => 'rj_bookmarks_footer_section'
 	)));
 
@@ -504,9 +504,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Contact', 'rj-bookmarks' ),
+			'placeholder' => __( 'Contact', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_footer_section',
 		'type'=> 'text'
@@ -517,9 +517,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_email'
 	));
 	$wp_customize->add_control('rj_bookmarks_email_address',array(
-		'label'	=> __('Add Email Address','rj-bookmarks'),
+		'label'	=> __('Add Email Address','rj-mojo'),
 		'input_attrs' => array(
-            'placeholder' => __( 'mojo.nagpur@gmail.com', 'rj-bookmarks' ),
+            'placeholder' => __( 'mojo.nagpur@gmail.com', 'rj-mojo' ),
         ),
 		'section'=> 'rj_bookmarks_footer_section',
 		'type'=> 'text'
@@ -528,7 +528,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 
 	// Book Visit Setting
 	$wp_customize->add_section( 'rj_bookmarks_book_visit_section' , array(
-		'title'      => __( 'Book Visit Section', 'rj-bookmarks' ),
+		'title'      => __( 'Book Visit Section', 'rj-mojo' ),
 		'priority'   => null,
 		'panel' => 'rj_bookmarks_panel_id'
 	) );
@@ -538,9 +538,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_book_visit_heading',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Book Your Visit', 'rj-bookmarks' ),
+			'placeholder' => __( 'Book Your Visit', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_book_visit_section',
 		'type'=> 'text'
@@ -552,9 +552,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_book_visit_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __($book_visit_para, 'rj-bookmarks' ),
+			'placeholder' => __($book_visit_para, 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_book_visit_section',
 		'type'=> 'textarea'
@@ -563,7 +563,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 
 	// Air Play Setting
 	$wp_customize->add_section( 'rj_bookmarks_air_play_section' , array(
-		'title'      => __( 'Air Play Section', 'rj-bookmarks' ),
+		'title'      => __( 'Air Play Section', 'rj-mojo' ),
 		'priority'   => null,
 		'panel' => 'rj_bookmarks_panel_id'
 	) );
@@ -573,9 +573,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_air_play_heading',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __( 'Air Play', 'rj-bookmarks' ),
+			'placeholder' => __( 'Air Play', 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_air_play_section',
 		'type'=> 'text'
@@ -587,9 +587,9 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_air_play_text',array(
-		'label'	=> __('Add Text','rj-bookmarks'),
+		'label'	=> __('Add Text','rj-mojo'),
 		'input_attrs' => array(
-			'placeholder' => __($air_play_para, 'rj-bookmarks' ),
+			'placeholder' => __($air_play_para, 'rj-mojo' ),
 		),
 		'section'=> 'rj_bookmarks_air_play_section',
 		'type'=> 'textarea'
@@ -612,13 +612,13 @@ function rj_bookmarks_customizer_register( $wp_customize ){
   $wp_customize->add_panel( 'rj_bookmarks_add_panel', array(
     'capability' => 'edit_theme_options',
     'theme_supports' => '',
-    'title' => esc_html__( 'Aviationist Theme Settings', 'rj-bookmarks' ),
+    'title' => esc_html__( 'Aviationist Theme Settings', 'rj-mojo' ),
     'priority' => 10,
   ));
 
   // Topbar START
   $wp_customize->add_section('rj_bookmarks_topabr' , array(
-    'title' => __( 'Topbar', 'rj-bookmarks' ),
+    'title' => __( 'Topbar', 'rj-mojo' ),
     'panel' => 'rj_bookmarks_add_panel'
   ) );
 
@@ -629,7 +629,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 	));
 	$wp_customize->add_control('rj_bookmarks_topbar_menu',array(
 		'type' => 'select',
-		'label' => __('Select the Menu','rj-bookmarks'),
+		'label' => __('Select the Menu','rj-mojo'),
 		'section' => 'rj_bookmarks_topabr',
 		'choices' 	=> $menu_list,
 	));
@@ -639,7 +639,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_topbar_icon_number',array(
-		'label'	=> esc_html__('Number of icons to show','rj-bookmarks'),
+		'label'	=> esc_html__('Number of icons to show','rj-mojo'),
 		'section'=> 'rj_bookmarks_topabr',
 		'type'=> 'number'
 	));
@@ -659,7 +659,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 	// ));
 
 	  $wp_customize->add_control( new RJ_BOOKMARKS_SEPARATOR( $wp_customize, 'rj_bookmarks_topbar_icon_separator'.$i,array(
-			'label' => esc_html__( 'Icon '.($i + 1),'rj-bookmarks' ),
+			'label' => esc_html__( 'Icon '.($i + 1),'rj-mojo' ),
 			'section' => 'rj_bookmarks_topabr'
 	  )));
 
@@ -668,8 +668,8 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 			// 'sanitize_callback'	=> 'sanitize_text_field'
 		));
 		$wp_customize->add_control('rj_bookmarks_topbar_icon'.$i,array(
-			'label'	=> esc_html__('Icon Svg Code','rj-bookmarks'),
-			'description' => __( 'Add the svg code', 'rj-bookmarks' ),
+			'label'	=> esc_html__('Icon Svg Code','rj-mojo'),
+			'description' => __( 'Add the svg code', 'rj-mojo' ),
 			'section'=> 'rj_bookmarks_topabr',
 			'type'=> 'textarea'
 		));
@@ -679,7 +679,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 			'sanitize_callback'	=> 'sanitize_text_field'
 		));
 		$wp_customize->add_control('rj_bookmarks_topbar_icon_url'.$i,array(
-			'label'	=> esc_html__('Url','rj-bookmarks'),
+			'label'	=> esc_html__('Url','rj-mojo'),
 			'section'=> 'rj_bookmarks_topabr',
 			'type'=> 'text'
 		));
@@ -689,8 +689,8 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 			'sanitize_callback'	=> 'sanitize_text_field'
 		));
 		$wp_customize->add_control('rj_bookmarks_topbar_icon_title'.$i,array(
-			'label'	=> esc_html__('Title','rj-bookmarks'),
-			'description' => __( 'Add the title for the SEO purpose', 'rj-bookmarks' ),
+			'label'	=> esc_html__('Title','rj-mojo'),
+			'description' => __( 'Add the title for the SEO purpose', 'rj-mojo' ),
 			'section'=> 'rj_bookmarks_topabr',
 			'type'=> 'text'
 		));
@@ -700,7 +700,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 
 	//  news scroller
 	$wp_customize->add_section('rj_bookmarks_news_scroller' , array(
-    'title' => __( 'News Scroll Bar', 'rj-bookmarks' ),
+    'title' => __( 'News Scroll Bar', 'rj-mojo' ),
     'panel' => 'rj_bookmarks_add_panel'
   ) );
 
@@ -709,7 +709,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_news_ribbon_heading',array(
-		'label'	=> esc_html__('Text','rj-bookmarks'),
+		'label'	=> esc_html__('Text','rj-mojo'),
 		'section'=> 'rj_bookmarks_news_scroller',
 		'type'=> 'text'
 	));
@@ -719,14 +719,14 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_news_ribbon_post_num',array(
-		'label'	=> esc_html__('Number of post','rj-bookmarks'),
+		'label'	=> esc_html__('Number of post','rj-mojo'),
 		'section'=> 'rj_bookmarks_news_scroller',
 		'type'=> 'number'
 	));
 
 	//  slider
 	$wp_customize->add_section('rj_bookmarks_news_slider' , array(
-    'title' => __( 'Slider', 'rj-bookmarks' ),
+    'title' => __( 'Slider', 'rj-mojo' ),
     'panel' => 'rj_bookmarks_add_panel'
   ) );
 
@@ -735,14 +735,14 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_slider_post_num',array(
-		'label'	=> esc_html__('Number Of Slider To Show','rj-bookmarks'),
+		'label'	=> esc_html__('Number Of Slider To Show','rj-mojo'),
 		'section'=> 'rj_bookmarks_news_slider',
 		'type'=> 'number'
 	));
 
 	// Categories section
 	$wp_customize->add_section('rj_bookmarks_post_categories' , array(
-		'title' => __( 'Category', 'rj-bookmarks' ),
+		'title' => __( 'Category', 'rj-mojo' ),
 		'panel' => 'rj_bookmarks_add_panel'
 	) );
 
@@ -751,7 +751,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_category_heading',array(
-		'label'	=> esc_html__('Category Heading','rj-bookmarks'),
+		'label'	=> esc_html__('Category Heading','rj-mojo'),
 		'section'=> 'rj_bookmarks_post_categories',
 		'type'=> 'text'
 	));
@@ -761,7 +761,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_category_see_more',array(
-		'label'	=> esc_html__('See More','rj-bookmarks'),
+		'label'	=> esc_html__('See More','rj-mojo'),
 		'section'=> 'rj_bookmarks_post_categories',
 		'type'=> 'text'
 	));
@@ -771,7 +771,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 	// 	'sanitize_callback'	=> 'sanitize_text_field'
 	// ));
 	// $wp_customize->add_control('rj_bookmarks_category_see_more_url',array(
-	// 	'label'	=> esc_html__('See More Url','rj-bookmarks'),
+	// 	'label'	=> esc_html__('See More Url','rj-mojo'),
 	// 	'section'=> 'rj_bookmarks_post_categories',
 	// 	'type'=> 'text'
 	// ));
@@ -781,7 +781,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_category_cat_num',array(
-		'label'	=> esc_html__('Number of tabs to show','rj-bookmarks'),
+		'label'	=> esc_html__('Number of tabs to show','rj-mojo'),
 		'section'=> 'rj_bookmarks_post_categories',
 		'type'=> 'number'
 	));
@@ -791,14 +791,14 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_category_view_more',array(
-		'label'	=> esc_html__('Number of tabs to show','rj-bookmarks'),
+		'label'	=> esc_html__('Number of tabs to show','rj-mojo'),
 		'section'=> 'rj_bookmarks_post_categories',
 		'type'=> 'text'
 	));
 
 	// other artilces
 	$wp_customize->add_section('rj_bookmarks_other_articles' , array(
-		'title' => __( 'Other Articles', 'rj-bookmarks' ),
+		'title' => __( 'Other Articles', 'rj-mojo' ),
 		'panel' => 'rj_bookmarks_add_panel'
 	) );
 
@@ -807,14 +807,14 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_other_articles_heading',array(
-		'label'	=> esc_html__('Other Articles','rj-bookmarks'),
+		'label'	=> esc_html__('Other Articles','rj-mojo'),
 		'section'=> 'rj_bookmarks_other_articles',
 		'type'=> 'text'
 	));
 
 	// 	comment policy
 	$wp_customize->add_section('rj_bookmarks_comment_policy' , array(
-		'title' => __( 'Comment Policy', 'rj-bookmarks' ),
+		'title' => __( 'Comment Policy', 'rj-mojo' ),
 		'panel' => 'rj_bookmarks_add_panel'
 	) );
 
@@ -823,8 +823,8 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 	    'sanitize_callback' => 'esc_url_raw',
 	  ));
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_comments_policy_bgimage',array(
-      'label' => __('Background Image ','rj-bookmarks'),
-      'description' => __('Dimension (1600px * 700px)','rj-bookmarks'),
+      'label' => __('Background Image ','rj-mojo'),
+      'description' => __('Dimension (1600px * 700px)','rj-mojo'),
       'section' => 'rj_bookmarks_comment_policy',
       'settings' => 'rj_bookmarks_comments_policy_bgimage'
   )));
@@ -834,7 +834,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_comment_policy_heading',array(
-		'label'	=> esc_html__('Heading','rj-bookmarks'),
+		'label'	=> esc_html__('Heading','rj-mojo'),
 		'section'=> 'rj_bookmarks_comment_policy',
 		'type'=> 'text'
 	));
@@ -844,7 +844,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_comment_policy_para',array(
-		'label'	=> esc_html__('Description','rj-bookmarks'),
+		'label'	=> esc_html__('Description','rj-mojo'),
 		'section'=> 'rj_bookmarks_comment_policy',
 		'type'=> 'textarea'
 	));
@@ -854,7 +854,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_comment_policy_btn',array(
-		'label'	=> esc_html__('Button','rj-bookmarks'),
+		'label'	=> esc_html__('Button','rj-mojo'),
 		'section'=> 'rj_bookmarks_comment_policy',
 		'type'=> 'text'
 	));
@@ -864,14 +864,14 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_comment_policy_btn_url',array(
-		'label'	=> esc_html__('Button Url','rj-bookmarks'),
+		'label'	=> esc_html__('Button Url','rj-mojo'),
 		'section'=> 'rj_bookmarks_comment_policy',
 		'type'=> 'text'
 	));
 
 	//  also on aviationist
 	$wp_customize->add_section('rj_bookmarks_also_on_aviationist' , array(
-		'title' => __( 'Also on aviationist', 'rj-bookmarks' ),
+		'title' => __( 'Also on aviationist', 'rj-mojo' ),
 		'panel' => 'rj_bookmarks_add_panel'
 	) );
 	$wp_customize->add_setting('rj_bookmarks_also_on_aviationist_heading',array(
@@ -879,7 +879,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_also_on_aviationist_heading',array(
-		'label'	=> esc_html__('Heading','rj-bookmarks'),
+		'label'	=> esc_html__('Heading','rj-mojo'),
 		'section'=> 'rj_bookmarks_also_on_aviationist',
 		'type'=> 'text'
 	));
@@ -888,7 +888,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_also_on_aviationist_post_num',array(
-		'label'	=> esc_html__('Number of post to show','rj-bookmarks'),
+		'label'	=> esc_html__('Number of post to show','rj-mojo'),
 		'section'=> 'rj_bookmarks_also_on_aviationist',
 		'type'=> 'text'
 	));
@@ -896,7 +896,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 
 	//  contact us page
 	$wp_customize->add_section('rj_bookmarks_contact_us_page' , array(
-		'title' => __( 'Contact Us Page', 'rj-bookmarks' ),
+		'title' => __( 'Contact Us Page', 'rj-mojo' ),
 		'panel' => 'rj_bookmarks_add_panel'
 	) );
 	$wp_customize->add_setting('rj_bookmarks_contact_us_description',array(
@@ -904,7 +904,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_description',array(
-		'label'	=> esc_html__('Page Description','rj-bookmarks'),
+		'label'	=> esc_html__('Page Description','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'textarea'
 	));
@@ -914,7 +914,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_page_title',array(
-		'label'	=> esc_html__('Heading','rj-bookmarks'),
+		'label'	=> esc_html__('Heading','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'text'
 	));
@@ -924,7 +924,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_title_desc',array(
-		'label'	=> esc_html__('Heading Description','rj-bookmarks'),
+		'label'	=> esc_html__('Heading Description','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'textarea'
 	));
@@ -934,7 +934,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_form_title',array(
-		'label'	=> esc_html__('Form Heading','rj-bookmarks'),
+		'label'	=> esc_html__('Form Heading','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'text'
 	));
@@ -944,7 +944,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_form_description',array(
-		'label'	=> esc_html__('Form Description','rj-bookmarks'),
+		'label'	=> esc_html__('Form Description','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'textarea'
 	));
@@ -954,7 +954,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_form_shortcode',array(
-		'label'	=> esc_html__('Form Shortcode','rj-bookmarks'),
+		'label'	=> esc_html__('Form Shortcode','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'text'
 	));
@@ -964,7 +964,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 			'sanitize_callback' => 'esc_url_raw',
 		));
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'rj_bookmarks_contact_us_image',array(
-			'label' => __('Image ','rj-bookmarks'),
+			'label' => __('Image ','rj-mojo'),
 			'section' => 'rj_bookmarks_contact_us_page',
 			'settings' => 'rj_bookmarks_contact_us_image'
 	)));
@@ -974,7 +974,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_below_description',array(
-		'label'	=> esc_html__('Text Below Form','rj-bookmarks'),
+		'label'	=> esc_html__('Text Below Form','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'text'
 	));
@@ -983,7 +983,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_about_page_link',array(
-		'label'	=> esc_html__('About page link','rj-bookmarks'),
+		'label'	=> esc_html__('About page link','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'text'
 	));
@@ -992,7 +992,7 @@ function rj_bookmarks_customizer_register( $wp_customize ){
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_bookmarks_contact_us_about_page_text',array(
-		'label'	=> esc_html__('About us page text','rj-bookmarks'),
+		'label'	=> esc_html__('About us page text','rj-mojo'),
 		'section'=> 'rj_bookmarks_contact_us_page',
 		'type'=> 'text'
 	));

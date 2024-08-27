@@ -2,7 +2,7 @@
 /**
  * The template part for menu
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 ?>
 <div id="header">

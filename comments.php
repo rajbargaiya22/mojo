@@ -7,7 +7,7 @@
  * handled by a callback to rj_bookmarks_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 
 /*
@@ -25,9 +25,9 @@ if ( post_password_required() ) {
 		<h3 class="rj-comment-title">
 			<?php
 			$rj_bookmarks_comments_number = get_comments_number();
-					// echo esc_html__('Responses (' . $rj_bookmarks_comments_number . ')' , 'rj-bookmarks');
+					// echo esc_html__('Responses (' . $rj_bookmarks_comments_number . ')' , 'rj-mojo');
 					printf(
-			    	esc_html__( 'Responses (%d)', 'rj-bookmarks' ),
+			    	esc_html__( 'Responses (%d)', 'rj-mojo' ),
 			    	$rj_bookmarks_comments_number
 					);
 			?>
@@ -51,15 +51,15 @@ if ( post_password_required() ) {
 	<?php
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'rj-bookmarks' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'rj-mojo' ); ?></p>
 	<?php endif; ?>
 
 	<?php
 		comment_form( array(
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
-			'title_reply' => esc_html(get_theme_mod('rj_bookmarks_single_blog_comment_title',__('','rj-bookmarks' )) ),
-			'label_submit' => esc_html(get_theme_mod('rj_bookmarks_single_blog_comment_button_text',__('Submit','rj-bookmarks' )) ),
+			'title_reply' => esc_html(get_theme_mod('rj_bookmarks_single_blog_comment_title',__('','rj-mojo' )) ),
+			'label_submit' => esc_html(get_theme_mod('rj_bookmarks_single_blog_comment_button_text',__('Submit','rj-mojo' )) ),
 		) );
 	?>
 </div>

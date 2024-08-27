@@ -35,7 +35,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	class RJ_BOOKMARKS_SEPARATOR extends WP_Customize_Control {
 		public function render_content(){
 		?>
-			<div class="rj-bookmarks-custom-separator">
+			<div class="rj-mojo-custom-separator">
 				<?php echo esc_html( $this->label ); ?>
 			</div>
 		<?php

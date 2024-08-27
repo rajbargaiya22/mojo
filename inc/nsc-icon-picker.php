@@ -15,7 +15,7 @@ class RJ_BOOKMARKS_FONT_AWESOME_ICON_PICKER extends WP_Customize_Control{
                 </span>
                 <?php } ?>
                 <div class="social-icon-search">
-                    <input class="socialInput" type="text" placeholder="<?php echo esc_attr_x( 'Icon', 'placeholder', 'rj-bookmarks' ); ?>">
+                    <input class="socialInput" type="text" placeholder="<?php echo esc_attr_x( 'Icon', 'placeholder', 'rj-mojo' ); ?>">
                 </div>
                 <div class="selected-icon">
                     <i class="fa <?php echo esc_attr($this->value()); ?>"></i>
@@ -28,7 +28,7 @@ class RJ_BOOKMARKS_FONT_AWESOME_ICON_PICKER extends WP_Customize_Control{
                     foreach ($rj_bookmarks_font_awesome_icon_array as $rj_bookmarks_font_awesome_icon) {
                             $icon_class = $this->value() == $rj_bookmarks_font_awesome_icon ? 'icon-active' : '';
                             echo '<li class='.esc_attr($icon_class).'><i class="'.esc_attr($rj_bookmarks_font_awesome_icon).'"></i>
-                            <span class="rj-bookmarks-social-class">'.esc_attr($rj_bookmarks_font_awesome_icon).'</span>
+                            <span class="rj-mojo-social-class">'.esc_attr($rj_bookmarks_font_awesome_icon).'</span>
                             </li>';
                         }
                     ?>
@@ -42,7 +42,7 @@ class RJ_BOOKMARKS_FONT_AWESOME_ICON_PICKER extends WP_Customize_Control{
 function rj_bookmarks_customizer_script() {
 
     wp_enqueue_style( 'rj-customizer-font-awesome', esc_url(get_template_directory_uri()).'/assets/css/fontawesome-all.css');
-    wp_enqueue_script( 'rj-bookmarks-customizer-script', esc_url(get_template_directory_uri()).'/assets/js/customizer-scripts.js', array("jquery"),'', true  );
+    wp_enqueue_script( 'rj-mojo-customizer-script', esc_url(get_template_directory_uri()).'/assets/js/customizer-scripts.js', array("jquery"),'', true  );
 }
 add_action( 'customize_controls_enqueue_scripts', 'rj_bookmarks_customizer_script' );
 

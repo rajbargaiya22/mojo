@@ -26,8 +26,8 @@ $phoneNumber = "8010670818";
 						<div class="rj-time-img">
 							<img src=<?php echo get_template_directory_uri() . "/assets/images/time.png" ?> alt="world">
 						</div>
-						<h5><?php esc_html_e('Time', 'rj-bookmarks'); ?></h5>
-						<p><?php esc_html_e('Mon - 2:00pm to 7:30pm Tue - Sun 11:00 am to 7:30 pm', 'rj-bookmarks'); ?></p> 
+						<h5><?php esc_html_e('Time', 'rj-mojo'); ?></h5>
+						<p><?php esc_html_e('Mon - 2:00pm to 7:30pm Tue - Sun 11:00 am to 7:30 pm', 'rj-mojo'); ?></p> 
 					</div>*/?>
 					<div class="col-xl-4 col-lg-4 col-md-6">
 						<div class="rj-contact-img">
@@ -58,8 +58,8 @@ $phoneNumber = "8010670818";
 
 												<div class="d-flex align-items-center gap-2">
 													<span>
-														<label for="contact_no">Mobile</label>
-														<input type="tel" id="contact_no" name="contact_no" placeholder="Enter mobile number" required>
+														<label for="mobile">Mobile</label>
+														<input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
 													</span>
 													<span>
 														<label for="email">Email</label>
@@ -81,8 +81,10 @@ $phoneNumber = "8010670818";
 														<textarea id="message" name="message" placeholder="Enter any additional message" required></textarea>
 													</span>
 												</div>
+
+												<input type="hidden" name="contact_form_nonce" value="<?php echo wp_create_nonce('submit_contact_form'); ?>">
 												<div class="modal-footer">
-													<button class="rj-submit-button" type="submit" name="submit_booking">Submit</button>
+													<button class="rj-submit-button" type="submit" name="submit_booking"  value="<?php echo wp_create_nonce('rj_mojo_contact_us_form'); ?>">Submit</button>
 												</div>
 										</form>
 									</div>

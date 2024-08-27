@@ -2,7 +2,7 @@
 /**
  * The template part for theme settings
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 ?>
 
@@ -11,7 +11,7 @@
   <button type="button" class="d-block ms-auto rj-setting-btn" id="rj-setting-btn" aria-label="rj-setting-content">
     <i class="fa-solid fa-gear"></i>
     <span class="screen-reader-text">
-      <?php echo esc_html(get_theme_mod('rj_bookmarks_theme_settings_button',__('Open setting','rj-bookmarks')));?>
+      <?php echo esc_html(get_theme_mod('rj_bookmarks_theme_settings_button',__('Open setting','rj-mojo')));?>
     </span>
   </button>
 

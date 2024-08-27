@@ -2,7 +2,7 @@
 /**
  * The Template for displaying search results.
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 
 get_header();
@@ -181,9 +181,9 @@ get_template_part('template-parts/breadcrumb'); ?>
 			            <div class="rj-post-navigation">
 			                <?php
 			                the_posts_pagination(array(
-			                    'prev_text'          => __('Previous page', 'rj-bookmarks'),
-			                    'next_text'          => __('Next page', 'rj-bookmarks'),
-			                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'rj-bookmarks') . ' </span>',
+			                    'prev_text'          => __('Previous page', 'rj-mojo'),
+			                    'next_text'          => __('Next page', 'rj-mojo'),
+			                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'rj-mojo') . ' </span>',
 			                ));
 			                ?>
 			            </div>

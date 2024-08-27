@@ -2,7 +2,7 @@
 /*
 * Template parts to display logo
 *
-* @package rj-bookmarks
+* @package rj-mojo
 */
 ?>
 

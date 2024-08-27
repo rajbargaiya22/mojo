@@ -82,7 +82,7 @@ if ( $rj_bookmarks_related_posts->have_posts() ) : ?>
                     <?php
                       $post_content = get_the_content();
                       $reading_time = rj_bookmarks_calculate_reading_time($post_content);
-                      echo esc_html($reading_time . "Min Read", 'rj-bookmarks');
+                      echo esc_html($reading_time . "Min Read", 'rj-mojo');
                     ?>
                   </li>
                   <li>

@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 
 get_header(); ?>

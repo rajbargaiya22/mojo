@@ -26,7 +26,7 @@ function rj_mojo_enqueue_scripts() {
 	wp_enqueue_script('rj-jquery-js', get_template_directory_uri(). '/assets/js/jquery-min.js', false, false);
 	wp_enqueue_script('rj-slick-slider-js', get_template_directory_uri(). '/assets/js/slick.min.js', array('jquery'), false, false);
 	wp_enqueue_script('rj-owl-carousel-js', get_template_directory_uri(). '/assets/js/owl.carousel.js',  array('jquery'), false, false);
-    wp_enqueue_script('rj-nsc-custom.js', get_template_directory_uri(). '/assets/js/nsc-custom.js', false, false);
+    wp_enqueue_script('rj-custom.js', get_template_directory_uri(). '/assets/js/rj-custom.js', false, false);
     wp_enqueue_script( 'wow-jquery', get_template_directory_uri() . '/assets/js/wow.js', array('jquery'),'' ,true );
 
 	// wp_enqueue_script('jquery');
@@ -161,12 +161,14 @@ function create_exhibit_category_taxonomy() {
 }
 add_action('init', 'create_exhibit_category_taxonomy');
 
+// dashboard booking table
 function rj_mojo_create_booking_custom_table() {
     global $wpdb;
     
     $table_name = $wpdb->prefix . 'visit_bookings'; // Name of the table
     $charset_collate = $wpdb->get_charset_collate();
 
+    // Corrected SQL statement for 'visit_bookings' table
     $sql = "CREATE TABLE $table_name (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         name varchar(255) NOT NULL,
@@ -179,12 +181,9 @@ function rj_mojo_create_booking_custom_table() {
         total_cost varchar(255) NOT NULL,
         PRIMARY KEY  (id)
     ) $charset_collate;";
-
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($sql);
 }
 
-add_action('init', 'rj_mojo_create_booking_custom_table'); 
+add_action('init', 'rj_mojo_create_booking_custom_table');
 
 function rj_mojo_booking_form() {
 
@@ -263,7 +262,108 @@ function rj_mojo_booking_form() {
 
     }
 }
-
 add_action('wp', 'rj_mojo_booking_form');
 
+// submit table
+function rj_mojo_create_contact_us_table() {
+    global $wpdb;
+    
+    $table_name = $wpdb->prefix . 'contact_us';
+    $charset_collate = $wpdb->get_charset_collate();
+
+    $sql = "CREATE TABLE $table_name (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        name varchar(255) NOT NULL,
+        email varchar(255) NOT NULL,
+        mobile varchar(20) NOT NULL,
+        message text NOT NULL,
+        PRIMARY KEY  (id)
+    ) $charset_collate;";
+
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
+add_action('init', 'rj_mojo_create_contact_us_table');
+
+
+function rj_mojo_contact_us_form() {
+
+    if (isset($_POST['submit_booking']) && isset($_POST['contact_form_nonce'])) {
+        if (!wp_verify_nonce($_POST['contact_form_nonce'], 'submit_contact_form')) {
+            wp_die('Security check failed');
+        }
+
+        global $wpdb;
+        
+        // Table name
+        $table_name = $wpdb->prefix . 'contact_us';
+        
+        // Sanitize input
+        $name = sanitize_text_field($_POST['name']);
+        $email = sanitize_email($_POST['email']);
+        $mobile = preg_replace('/[^0-9\s\-]/', '', $_POST['mobile']);
+        $message = sanitize_text_field($_POST['message']);
+
+        // Insert data into the database
+        $wpdb->insert(
+            $table_name,
+            array(
+                'name' => $name,
+                'email' => $email,
+                'mobile' => $mobile,
+                'message' => $message,
+            ),
+            array(
+                '%s', // 'name' field
+                '%s', // 'email' field
+                '%s', // 'mobile' field
+                '%s'  // 'message' field
+            )
+        );
+
+        // Email details
+        $to = $email; // Send confirmation to the submitter
+        $subject = 'Submit Confirmation';
+        $body = "Thank you for booking with us!\n\nHere are the details of your booking:\n\n".
+                "Name: $name\n".
+                "Email: $email\n".
+                "Mobile: $mobile\n".
+                "Message: $message\n".
+                "We will get back to you soon.";
+        $headers = array('Content-Type: text/plain; charset=UTF-8');
+
+        // Send email
+        wp_mail($to, $subject, $body, $headers);
+
+        // Optionally, send an email to the admin or another recipient
+        $admin_email = get_option('admin_email'); // Admin email address
+        $admin_subject = 'New Submit Request';
+        $admin_body = "A new booking request has been submitted:\n\n".
+                      "Name: $name\n".
+                        "Email: $email\n".
+                        "Mobile: $mobile\n".
+                        "Message: $message\n".
+        
+        wp_mail('kgorle@dhaninfo.biz', $admin_subject, $admin_body, $headers);
+        // wp_mail('nehall.goyal@gmail.com', $admin_subject, $admin_body, $headers);
+        // wp_mail('mojo.nagpur@gmail.com', $admin_subject, $admin_body, $headers);
+
+        wp_redirect(home_url());
+        exit;
+
+    }
+}
+add_action('init', 'rj_mojo_contact_us_form');
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
