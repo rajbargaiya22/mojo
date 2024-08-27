@@ -77,25 +77,72 @@ jQuery(document).ready(function($) {
         dots: true,
 		nav: false,
     });
+
+    const child_rate = parseFloat($('#child_rate').val());
+    const grown_rate = parseFloat($('#grown_rate').val());
+    const total_cost = $('#total_cost');
+    let child_cost = 0;
+    let grownup_cost = 0;
+
+    // Function to update the total cost
+    function updateTotalCost() {
+        const total = child_cost + grownup_cost;
+        total_cost.val("Rs. " + total);
+    }
+
+    document.getElementById('increment').addEventListener('click', function() {
+        var input = document.getElementById('no_of_children');
+        let value = parseInt(input.value) + 1;
+        input.value = value;
+        child_cost = value * child_rate;
+        updateTotalCost(); // Update the total cost
+    });
+
+    document.getElementById('decrement').addEventListener('click', function() {
+        var input = document.getElementById('no_of_children');
+        var value = parseInt(input.value);
+        if (value > 0) {
+            value -= 1;
+            input.value = value;
+            child_cost = value * child_rate;
+            updateTotalCost(); // Update the total cost
+        }
+    });
+
+    // Function to handle increment and decrement for grownups
+    function updateValue(button, isIncrement) {
+        const input = button.parentElement.querySelector('input[type="number"]');
+        let value = parseInt(input.value, 10);
+        if (isIncrement) {
+            value += 1;
+        } else {
+            if (value > 0) {
+                value -= 1;
+            }
+        }
+        input.value = value;
+        grownup_cost = value * grown_rate;
+        updateTotalCost(); // Update the total cost
+    }
+
+    document.querySelectorAll('.increment').forEach(button => {
+        button.addEventListener('click', () => updateValue(button, true));
+    });
+
+    document.querySelectorAll('.decrement').forEach(button => {
+        button.addEventListener('click', () => updateValue(button, false));
+    });
+
+    $('#no_of_children, #no_of_elders').on('change', function() {
+        const childrenCount = parseInt($('#no_of_children').val()) || 0;
+        const eldersCount = parseInt($('#no_of_elders').val()) || 0;
+        
+        child_cost = childrenCount * child_rate;
+        grownup_cost = eldersCount * grown_rate;
+        
+        updateTotalCost(); // Update the total cost
+    });
+
+    // Initial calculation to set the initial total cost
+    updateTotalCost();
 });
-
-
-  (function($){
-	function floatLabel(inputType){
-		$(inputType).each(function(){
-			var $this = $(this);
-			// on focus add cladd active to label
-			$this.focus(function(){
-				$this.next().addClass("active");
-			});
-			//on blur check field and remove class if needed
-			$this.blur(function(){
-				if($this.val() === '' || $this.val() === 'blank'){
-					$this.next().removeClass();
-				}
-			});
-		});
-	}
-	floatLabel(".floatLabel");
-})(jQuery);
-

@@ -89,7 +89,8 @@ get_header();
         </div>
     </div>
     <div class="rj-rocket-img">
-        <img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_about_image', get_template_directory_uri() . "/assets/images/about.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="about Image">
+    <img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_about_image1', get_template_directory_uri() . "/assets/images/bottom-image.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title1', true)); ?>" title="about Image"  class="bottom-image">
+        <img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_about_image2', get_template_directory_uri() . "/assets/images/rocket.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title2', true)); ?>" title="about Image" class="rocket-image">
     </div>
 </section>
 

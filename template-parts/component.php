@@ -1,4 +1,4 @@
-<svg id="Component_5_1" data-name="Component 5 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93.891" height="104.099" viewBox="0 0 93.891 104.099">
+<svg id="Component_5_1" data-name="Component 5 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 93.891 104.099">
   <defs>
     <clipPath id="clip-path">
       <rect id="Rectangle_268" data-name="Rectangle 268" width="93.891" height="104.099" fill="none"/>

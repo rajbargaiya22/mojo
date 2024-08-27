@@ -340,7 +340,7 @@ p:empty{
   justify-content: space-between;
 }
 .rj-tree-text h2{
-  font:400 clamp(23px, 2vw, 36px) / 1.5 'Chalkduster', sans-serif
+  font:400 clamp(19px, 2vw, 36px) / 1.5 'Chalkduster', sans-serif
 }
 .rj-tree-text img{  
   max-height: calc(var(--height) * 2 );
@@ -381,7 +381,7 @@ p:empty{
   max-height: clamp(100px, 5vw, 150px);
 }
 .rj-subject-text img{
-  max-width: 300px;
+  max-width: 270px;
 }
 .rotating-earth{
   width: 200px;
@@ -467,8 +467,33 @@ p:empty{
   background-image: linear-gradient(to top, #F0F0F0 100px, transparent 100px);
   width: 100%;
 }
-.rj-rocket-img img{
+.rocket-image{
+  max-width: clamp(64px, 8vw, 150px);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 58.5%;
+  transform: translateY(-80%);
+  animation: fly 2s linear infinite;
+  transform-origin: bottom;
+}
+@keyframes fly {
+  0%{
+    transform: translateY(-80%) ;
+  }
+  25%{
+    transform: translateY(-85%);
+  }
+  50%{
+    transform: translateY(-80%);
+  }
+  100%{
+    transform: translateY(-90%);
+  }
+}
+.bottom-image{
   width: 100%;
+  max-height: 700px;
 }
 /* animation */
 .rj-imagination-fly svg > g > g{
@@ -555,7 +580,7 @@ section#rj-about-section{
  }
 .rj-about-top {
   position: relative;
-  margin-top: -28%;
+  margin-top: -25%;
 }
 .rj-about-section h3{
   color: #0B4B96;
@@ -642,6 +667,13 @@ section#rj-about-section{
   left: 50%; */
 }
 /* form css */
+.rj-booking-boy img {
+  position: absolute;
+  width: 200px;
+  height: 400px;
+  bottom: 50px;
+  right: 8%;
+}
 div#staticBackdrop{
   background-color: rgb(0 0 0 / 0.7);
 }
@@ -649,9 +681,14 @@ div#staticBackdrop{
   background: rgb(11 11 11 / 0.1);
   border-radius: 20px;
   padding: clamp(10px , 3vw, 50px);
-}
-#booking-form{
   text-align: start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(250px, 16vw, 300px), 1fr));
+  gap: 10px;
+  position: relative;
+}
+#book-visit #booking-form :is(:first-child, :nth-last-of-type(2), :last-child){
+  grid-column: 1/-1;
 }
 .modal-content{
   background: rgb(11 11 11) !important;
@@ -661,38 +698,36 @@ div#staticBackdrop{
 .modal-header .btn-close,#no_of_children,#book-visit .btn-close,#no_of_children{
   color: #fff !important;
 }
-.modal-content input,.rj-message-box #message,#book-visit input,#book-visit #message{
+.modal-content input,#book-visit input, .rj-time-table{
   width: 100%;
-  margin-bottom: 12px !important;
-  font: 400 clamp(16px, 2vw, 14px) / 1.3 'Bahnschrift';
+  margin-bottom: 12px ;
+  font: 400 clamp(14px, 2vw, 16px) / 1.3 'Bahnschrift';
   background: #FFFFFF1C;
   border: 1px solid #A2E2FA;
   border-radius: 6px;
-  opacity: 1;
   padding: 12px;
-  color: #fff;
+  color: #A2E2FA99;
 }
-.rj-mobile-email input{
+.rj-time-table{
+  padding: 14px !important;
+}
+/* .rj-mobile-email input{
   width: clamp(287px, 3vw, 100%) !important;
 }
 .rj-mobile-email1 input {
   width: clamp(342px, 3vw, 100%) !important;
-}
-#booking_date,.modal-content input::placeholder,.rj-message-box #message::placeholder,
-#book-visit #booking_date,#book-visit input::placeholder, #book-visit #message::placeholder{
-  font: 400 clamp(20px, 2vw, 16px) / 1.3 'Bahnschrift';
+} */
+#book-visit #booking_date,#book-visit input::placeholder{
+  font: 400 clamp(18px, 2vw, 16px) / 1.3 'Bahnschrift';
   color: #A2E2FA99;
+}
+.rj-value{
+  color: #000;
 }
 .modal-content label,#book-visit label{
   margin-bottom: 12px !important;
   color:#fff;
-  font: 300 clamp(24px, 2vw, 16px) / 1.3 'Bahnschrift';
-}
-.rj-message-text{
-  margin-bottom: 0 !important;
-}
-.rj-message-box #message,#book-visit #message{
-  width: 100%;
+  font: 300 clamp(18px, 2vw, 16px) / 1.3 'Bahnschrift';
 }
 .rj-submit-button{
   background-color:#7FE6BB;
@@ -719,6 +754,47 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 20px;
   height: 20px;
   border-width: thin;
+}
+.rj-contact-email,.rj-date-time{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+#no_of_children, #no_of_elders{
+  margin-bottom: 0 !important;
+  border: unset !important;
+  background-color: transparent !important;
+  text-align: center;
+  padding: 0 !important;
+  color: #A2E2FA99 !important;
+}
+.children-data, .children-data button,.elders-data, .elders-data button{
+  width: 100%;
+  font: 400 clamp(16px, 2vw, 14px) / 1.3 'Bahnschrift';
+  background: #FFFFFF1C;
+  border: 1px solid #A2E2FA;
+  border-radius: 6px;
+  opacity: 1;
+  padding: 6px;
+}
+.children-data button, .elders-data button{
+  height: 35px;
+  width: 35px !important;
+  padding: 0 !important;
+  color: #A2E2FA99;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+
+}
+input[type="number"]:focus-visible{
+outline: unset;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 /* contact section */
 .rj-contact-section{
@@ -1110,7 +1186,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color:#0B4B96 ;
 }
 #book-visit .rj-visit-heading{
-  font: 400 clamp(25px, 4vw, 50px) / 1.95 'CARTOONFREE';
+  font: 400 clamp(25px, 4vw, 42px) / 1.95 'CARTOONFREE';
   color: #A2E2FA;
 }
 #book-visit  .rj-visit-para{
@@ -1242,15 +1318,19 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
     margin-left: 0px;
   }
 }
-@media screen and (min-width: 800px) and (max-width: 1023px){
+@media screen and (min-width: 768px) and (max-width: 1023px){
   .rj-rocket-img{
     bottom: calc(var(--height)* 0.8);
   }
+  .rotating-earth {
+    width: 145px;
+  }
+  .world-text {
+    left: -26px;
+    width: 194px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
-  .rj-about-top{
-    margin-top: -43%;
-  }
   .rj-copyright p{
     margin-left:40px;
   }
@@ -1271,6 +1351,9 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   .rj-about-section h3 {
     margin-left: 0%;
     text-align: center;
+  }
+  .rj-about-top {
+    margin-top: -36%;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1190px){
@@ -1366,12 +1449,8 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   .rj-formula svg {
     max-width: 166px;
   }
-  .rj-joy-text, .rj-vibrant-text, .rj-mission1, .rj-mission2, .rj-inspiration{
-    max-width: 980px;
-    margin: 0 auto clamp(25px, 4vw, 40px);
-  }
   .rj-about-top {
-    margin-top: -24%;
+    margin-top: -18%;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -1397,7 +1476,10 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   }
   .rj-imagination-fly{
     order: 8;
-    padding-bottom: clamp(110px, 55vw, 420px);
+    padding-bottom: 50%;
+  }
+  .rocket-image{
+    left: 54%;
   }
   .rj-logo img {
     max-height: calc(var(--height)* 4 - 50px);
@@ -1450,7 +1532,7 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   }
   .rj-about-top{
     padding-top: 40px;
-    margin-top: -60%;
+    margin-top: -50%;
     margin-left: 4px !important;
   }
   .rj-world-text h2{
@@ -1467,7 +1549,6 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
     top: 0;
   }
   .rj-rocket-img {
-    bottom: calc(var(--height)* 2);
     background-image:unset;
   }
   .rj-tree-text > *, .rj-subject-text > *{
@@ -1484,7 +1565,7 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   .chemical-component {
     width: 13%;
     right: 6px;
-    bottom: -15px;
+    bottom: 6px;
     top: unset;
   }
   .rj-formula{
@@ -1500,11 +1581,11 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
 }
 
 
-.slick-prev, .slick-next {
+/* .slick-prev, .slick-next {
   background: transparent;
   border: none;
-  font-size: 24px; /* Adjust based on your needs */
-  color: black; /* Adjust based on your needs */
+  font-size: 24px;
+  color: black; 
   width: auto;
   height: auto;
   display: flex;
@@ -1515,4 +1596,4 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
 .slick-prev svg, .slick-next svg {
   width: 24px;
   height: 24px;
-}
+} */
