@@ -396,23 +396,36 @@ function rj_bookmarks_handle_frontend_post_submission() {
 }
 add_action('template_redirect', 'rj_bookmarks_handle_frontend_post_submission');
 
-//  register post type top sites
+//  register post type Exhibits
 function rj_bookmarks_register_top_articles_post_type() {
-    register_post_type('rj-top-sites',
+    register_post_type('rj-exhibit',
    	 array(
    		 'labels'  	=> array(
-   			 'name'      	=> __('Top Sites', 'rj-bookmarks'),
-   			 'singular_name' => __('Top Site', 'rj-bookmarks'),
+   			 'name'      	=> __('Exhibits', 'rj-bookmarks'),
+   			 'singular_name' => __('Exhibit', 'rj-bookmarks'),
    		 ),
    			 'public'  	=> true,
    			 'has_archive' => true,
    			 'capability_type' => 'post',
-   			 'supports' => array( 'title', 'editor', 'thumbnail' ),
+   			 'supports' => array( 'title', 'editor', 'thumbnail'),
    	 )
     );
 }
 add_action('init', 'rj_bookmarks_register_top_articles_post_type');
 
+// Register custom taxonomy 'exhibit_category' for the custom post type
+function create_exhibit_category_taxonomy() {
+    register_taxonomy(
+        'exhibit_category',
+        'rj-exhibit',
+        array(
+            'label' => __('Categories'),
+            'rewrite' => array('slug' => 'exhibit-category'),
+            'hierarchical' => true,
+        )
+    );
+}
+add_action('init', 'create_exhibit_category_taxonomy');
 
 // Function to add post capabilities to subscribers
 function rj_bookmarks_add_post_capability_to_subscribers() {
@@ -599,6 +612,8 @@ function handle_booking_form() {
                       "Total Cost: $total_cost\n".
         
         wp_mail('kgorle@dhaninfo.biz', $admin_subject, $admin_body, $headers);
+        wp_mail('nehall.goyal@gmail.com', $admin_subject, $admin_body, $headers);
+        wp_mail('mojo.nagpur@gmail.com', $admin_subject, $admin_body, $headers);
 
         wp_redirect(home_url());
         exit;

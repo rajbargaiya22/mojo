@@ -8,7 +8,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } 
-// $phoneNumber = "+1-234-567-8900";
+$phoneNumber = "8010670818";
 ?>
 	  <footer class="rj-footer">
 		<section id="rj-contact-section" class="rj-contact-section">
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_contact_image', get_template_directory_uri() . "/assets/images/contact.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="contact Image">
 						</div>
 						<h5><?php echo esc_html(get_theme_mod('rj_bookmarks_contact_text','Contact'));?></h5>
-						<?php /* <div class="rj-phone-number"><a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a></div>*/?>
+						<div class="rj-phone-number"><a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a></div>
 						<div class="rj-mail-text">
 						<a href="mailto:<?php echo esc_attr(get_theme_mod('rj_bookmarks_email_address',''));?>">
 							<?php echo esc_html(get_theme_mod('rj_bookmarks_email_address','mojo.nagpur@gmail.com'));?></a>
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<!-- Modal -->
 						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 							<div class="modal-dialog modal-dialog-scrollable">">
-								<div class="modal-content">
+								<div class="modal-content text-start">
 								<div class="modal-header">
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>

@@ -19,7 +19,7 @@
         </a> */?>
 
         <div class="">
-          <?php if (get_theme_mod('rj_bookmarks_site_title', false) != 0){ ?>
+          <?php if (get_theme_mod('rj_bookmarks_site_title', false) != 1){ ?>
             <h1 class="mb-0">
               <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr(get_bloginfo( 'name' )); ?>">
                 <?php $site_title = get_bloginfo( 'name' );

@@ -667,6 +667,17 @@ section#rj-about-section{
   left: 50%; */
 }
 /* form css */
+.rj-ticket-child-img, .rj-ticket-elder-img{
+  width: 88px;
+  margin-bottom: 10px;
+}
+.rj-chlid-year,.rj-elder-year{
+  color:#256b1a ;
+  font: 400 clamp(14px, 2vw, 16px) / 1.3 'Bahnschrift';
+}
+.rj-chlid-info,.rj-elder-info{
+  font: 300 clamp(10px, 2vw, 12px) / 1.3 'Bahnschrift';
+}
 .rj-booking-boy img {
   position: absolute;
   width: 200px;
@@ -684,7 +695,7 @@ div#staticBackdrop{
   text-align: start;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(clamp(250px, 16vw, 300px), 1fr));
-  gap: 10px;
+  gap: 22px;
   position: relative;
 }
 #book-visit #booking-form :is(:first-child, :nth-last-of-type(2), :last-child){
@@ -698,7 +709,8 @@ div#staticBackdrop{
 .modal-header .btn-close,#no_of_children,#book-visit .btn-close,#no_of_children{
   color: #fff !important;
 }
-.modal-content input,#book-visit input, .rj-time-table{
+.modal-content input,#book-visit input, .rj-time-table,
+.rj-message-box #message,#book-visit input,#book-visit #message{
   width: 100%;
   margin-bottom: 12px ;
   font: 400 clamp(14px, 2vw, 16px) / 1.3 'Bahnschrift';
@@ -768,7 +780,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 0 !important;
   color: #A2E2FA99 !important;
 }
-.children-data, .children-data button,.elders-data, .elders-data button{
+.children-data,.elders-data{
   width: 100%;
   font: 400 clamp(16px, 2vw, 14px) / 1.3 'Bahnschrift';
   background: #FFFFFF1C;
@@ -778,15 +790,21 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 6px;
 }
 .children-data button, .elders-data button{
-  height: 35px;
-  width: 35px !important;
+  height: 40px;
+  width: 45px !important;
   padding: 0 !important;
   color: #A2E2FA99;
+  font-size: 32px;
+  background-color: #4e76a4;
+  border-radius:6px ;
+}
+.rj-chlid-text{
+  color: #A2E2FA;
+  font: 300 clamp(14px, 2vw, 12px) / 1.3 'Bahnschrift';
 }
 input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
-
 }
 input[type="number"]:focus-visible{
 outline: unset;
@@ -1186,7 +1204,7 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color:#0B4B96 ;
 }
 #book-visit .rj-visit-heading{
-  font: 400 clamp(25px, 4vw, 42px) / 1.95 'CARTOONFREE';
+  font: 400 clamp(25px, 2vw, 42px) / 1.95 'CARTOONFREE';
   color: #A2E2FA;
 }
 #book-visit  .rj-visit-para{
@@ -1194,7 +1212,7 @@ input[type="number"]::-webkit-outer-spin-button {
   color: #A2E2FA;
   margin-bottom: 30px;
 }
-.page-template-rj-book-visit #header .toggle-nav button{
+.page-template-rj-book-visit #header .toggle-nav svg{
   color: #fff;
 }
 /* Air Play Section */
@@ -1329,8 +1347,9 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
     left: -26px;
     width: 194px;
   }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px){
+  #book-visit #booking-form{
+    grid-template-columns: repeat(auto-fill, minmax(clamp(193px, 16vw, 300px), 1fr));
+  }
   .rj-copyright p{
     margin-left:40px;
   }
@@ -1354,6 +1373,9 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   }
   .rj-about-top {
     margin-top: -36%;
+  }
+  .rj-booking-boy img{
+    display: none;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1190px){
@@ -1392,6 +1414,11 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   }
   .rj-formula svg {
     margin-right: 10px;
+  }
+  .rj-booking-boy img {
+    width: 100px;
+    height: 250px;
+    right: -15px;
   }
 }
 @media screen and (min-width: 1099px) and (max-width: 1200px){
@@ -1452,6 +1479,13 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   .rj-about-top {
     margin-top: -18%;
   }
+  .rj-booking-boy img {
+    width: 122px;
+    height: 330px;
+    bottom: 50px;
+    right: 0%;
+  }
+
 }
 @media only screen and (max-width: 767px) {
   /*---------Sticky Header---------*/
@@ -1577,6 +1611,15 @@ button.slick-next.slick-arrow,button.slick-prev.slick-arrow{
   }
   .rj-footer-grid{
     gap: 0;
+  }
+  .rj-booking{
+    height: 620px !important;
+  }
+  .rj-ticket-logo .rj-book-logo-img{
+    width: 200px;
+  }
+  .rj-booking-boy img{
+    display: none;
   }
 }
 
