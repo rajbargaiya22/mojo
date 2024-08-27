@@ -183,23 +183,3 @@ $RJ_BOOKMARKS_POSTS_LOCATION_IMAGE -> init();
 
 }
 
-/*
-// Hook to add a custom column to the exhibit_category table
-function rj_bookmarks_post_cat_image($columns) {
-    $columns['post_cat_image'] = 'Image'; // Add your column name and label here
-    return $columns;
-}
-
-add_filter('manage_edit-exhibit_category_columns', 'rj_bookmarks_post_cat_image');
-
-// Display content in the custom column
-function rj_bookmarks_post_cat_image_content($deprecated, $column_name, $term_id) {
-    if ($column_name === 'post_cat_image') {
-        // Get and display your custom data here
-        $custom_data = get_term_meta($term_id, 'exhibit_category-image-id', true);
-        echo $custom_data;
-        echo '<img src="' . esc_url($custom_data) . '" style="max-width: 50px; height: auto;" alt="exhibit_category Image">';
-    }
-}
-
-add_action('manage_exhibit_category_post_cat_image', 'rj_bookmarks_post_cat_image_content', 10, 3); */

@@ -100,6 +100,8 @@ $rj_ticket_bg = get_theme_mod('rj_bookmarks_make_ideas_image', get_template_dire
 						<label for="total_cost">Total Cost</label>
 						<input type="text" id="total_cost" name="total_cost" placeholder="Total Cost" readonly>
 					</div>
+
+					<input type="hidden" name="booking_form_nonce" value="<?php echo wp_create_nonce('submit_booking_form'); ?>">
 					<div class="modal-footer">
 						<button class="rj-submit-button" type="submit" name="submit_booking">Book</button>
 					</div>
