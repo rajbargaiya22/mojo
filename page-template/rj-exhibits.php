@@ -9,8 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
+get_header();
 get_template_part('template-parts/rj-banner');
+$category = get_queried_object();
 ?>
 
 <section id="exhibits-section">
@@ -19,34 +20,42 @@ get_template_part('template-parts/rj-banner');
         $terms = get_terms(array(
             'taxonomy' => 'exhibit_category',
             'hide_empty' => false, 
+            'order' => 'ASC', 
+            'parent'     => 0 
         ));
         if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
             foreach ( $terms as $term ) {
                 $term_link = get_term_link( $term );
-                $image_id = get_term_meta($term->term_id, 'exhibit_category-image-id', true);
-                $image_url = wp_get_attachment_image_url($image_id);
-                echo '<div class="exhibit-item">';~
-                    echo '<div class="exhibit-content">';
-                        echo '<a href="' . esc_url( $term_link ) . '">';
-                        echo '<h2 class="exhibit-heading">' . esc_html( $term->name ) . '</h2>';
-                        echo '</a>';
-                        if ( ! empty( $term->description ) ) {
-                            echo '<div class="exhibit-para">' . esc_html( $term->description ) . '</div>';
-                        }
-                    echo '</div>'; 
-                    if ( ! empty( $image_url ) ) {
-                        echo '<div class="text-end exhibit-img">';
-                            echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $term->name ) . '" style="max-width: 100%; height: auto;" />';
-                        echo '</div>';
-                    }
-                echo '</div>'; 
-                
+                $image_1 = get_term_meta($term->term_id, 'exhibit_category-image-id-1', true);
+                ?>
+                <div class="exhibit-item">
+                    <div class="exhibit-content">
+                        <a href="<?php echo esc_url($term_link); ?>">
+                            <h2 class="exhibit-heading"><?php echo esc_html($term->name); ?></h2>
+                        </a>
+                        <?php if ( ! empty( $term->description ) ) : ?>
+                            <div class="exhibit-para"><?php echo esc_html($term->description); ?></div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="rj-category-images">
+                        <?php if ($image_1): ?>
+                            <div class="rj-category-image">
+                                <?php echo wp_get_attachment_image($image_1, 'medium'); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php
             }
-        }
+        } 
         ?>
+    </div>
+    <!-- Bottom Image Section -->
+    <div class="rj-bottom-img">
+        <img src="<?php echo esc_url(get_theme_mod('rj_mojo_bottom_image', get_template_directory_uri() . "/assets/images/exhibit-bottom-img.png")); ?>" 
+             alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" 
+             title="Exhibit Bottom Image">
     </div>
 </section>
 
-
-
-<?php get_footer();
+<?php get_footer(); ?>

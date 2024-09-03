@@ -267,7 +267,6 @@ add_action('wp', 'rj_mojo_booking_form');
 // submit table
 function rj_mojo_create_contact_us_table() {
     global $wpdb;
-    
     $table_name = $wpdb->prefix . 'contact_us';
     $charset_collate = $wpdb->get_charset_collate();
 
@@ -285,19 +284,14 @@ function rj_mojo_create_contact_us_table() {
 }
 add_action('init', 'rj_mojo_create_contact_us_table');
 
-
 function rj_mojo_contact_us_form() {
 
     if (isset($_POST['submit_booking']) && isset($_POST['contact_form_nonce'])) {
         if (!wp_verify_nonce($_POST['contact_form_nonce'], 'submit_contact_form')) {
             wp_die('Security check failed');
         }
-
         global $wpdb;
-        
-        // Table name
         $table_name = $wpdb->prefix . 'contact_us';
-        
         // Sanitize input
         $name = sanitize_text_field($_POST['name']);
         $email = sanitize_email($_POST['email']);
@@ -330,21 +324,20 @@ function rj_mojo_contact_us_form() {
                 "Mobile: $mobile\n".
                 "Message: $message\n".
                 "We will get back to you soon.";
-        $headers = array('Content-Type: text/plain; charset=UTF-8');
+        
 
         // Send email
-        wp_mail($to, $subject, $body, $headers);
-
-        // Optionally, send an email to the admin or another recipient
-        $admin_email = get_option('admin_email'); // Admin email address
-        $admin_subject = 'New Submit Request';
+        // $admin_email = get_option('admin_email'); 
+        $admin_subject = 'Contact Us Inquiry';
         $admin_body = "A new booking request has been submitted:\n\n".
-                      "Name: $name\n".
-                        "Email: $email\n".
-                        "Mobile: $mobile\n".
-                        "Message: $message\n".
-        
-        wp_mail('kgorle@dhaninfo.biz', $admin_subject, $admin_body, $headers);
+        "Name: $name\n".
+        "Email: $email\n".
+        "Mobile: $mobile\n".
+        "Message: $message\n";
+
+        $headers = array('Content-Type: text/plain; charset=UTF-8');
+        wp_mail($to, $subject, $body, $headers);
+        wp_mail("kgorle@dhaninfo.biz", $admin_subject, $admin_body, $headers);
         // wp_mail('nehall.goyal@gmail.com', $admin_subject, $admin_body, $headers);
         // wp_mail('mojo.nagpur@gmail.com', $admin_subject, $admin_body, $headers);
 
@@ -354,7 +347,104 @@ function rj_mojo_contact_us_form() {
     }
 }
 add_action('init', 'rj_mojo_contact_us_form');
-?>
+
+// exhibits metabox
+function my_custom_meta_box() {
+    add_meta_box(
+        'my_image_selector',         
+        'Select Multiple Images',    
+        'my_image_selector_callback',
+        'rj-exhibit',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'my_custom_meta_box');
+
+
+function my_image_selector_callback($post) {
+    // Retrieve existing images
+    $images = get_post_meta($post->ID, 'my_selected_images', true);
+    wp_nonce_field('my_image_selector_nonce', 'my_image_selector_nonce_field');
+    ?>
+
+    <div id="my-image-uploader">
+        <button type="button" class="button" id="upload_images_button">Select Images</button>
+        <ul id="image-gallery">
+            <?php
+            if ($images) {
+                foreach ($images as $image_id) {
+                    echo '<li>
+                            <img src="' . esc_url(wp_get_attachment_url($image_id)) . '" />
+                            <input type="hidden" name="my_selected_images[]" value="' . esc_attr($image_id) . '" />
+                            <button type="button" class="remove-image-button">&times;</button>
+                          </li>';
+                }
+            }
+            ?>
+        </ul>
+    </div>
+
+    <script>
+    jQuery(document).ready(function($) {
+        var frame;
+
+        // Handle the image selection
+        $('#upload_images_button').on('click', function(e) {
+            e.preventDefault();
+            if (frame) {
+                frame.open();
+                return;
+            }
+            frame = wp.media({
+                title: 'Select or Upload Images',
+                button: {
+                    text: 'Use these images'
+                },
+                multiple: true // Set to true to allow multiple files to be selected
+            });
+
+            frame.on('select', function() {
+                var selection = frame.state().get('selection');
+                selection.map(function(attachment) {
+                    attachment = attachment.toJSON();
+                    $('#image-gallery').append(
+                        '<li style="display: inline-block; margin: 10px; position: relative;">' +
+                        '<img src="' + attachment.url + '" style="max-width:100px;" />' +
+                        '<input type="hidden" name="my_selected_images[]" value="' + attachment.id + '" />' +
+                        '<button type="button" class="remove-image-button" style="position: absolute; top: 0; right: 0; background: red; color: white; border: none; cursor: pointer;">&times;</button>' +
+                        '</li>'
+                    );
+                });
+            });
+
+            frame.open();
+        });
+
+        // Handle the image removal
+        $('#image-gallery').on('click', '.remove-image-button', function() {
+            $(this).closest('li').remove(); // Remove the image item from the DOM
+        });
+    });
+    </script>
+
+    <?php
+}
+
+
+function my_save_image_selector($post_id) {
+    // Check for nonce security
+    if (!isset($_POST['my_image_selector_nonce_field']) || !wp_verify_nonce($_POST['my_image_selector_nonce_field'], 'my_image_selector_nonce')) {
+        return;
+    }
+    // Save images
+    if (isset($_POST['my_selected_images'])) {
+        update_post_meta($post_id, 'my_selected_images', array_map('intval', $_POST['my_selected_images']));
+    } else {
+        delete_post_meta($post_id, 'my_selected_images');
+    }
+}
+add_action('save_post', 'my_save_image_selector');
 
 
 

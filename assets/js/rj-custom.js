@@ -73,9 +73,25 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($) {
-    jQuery('.slick-slider').slick({
-        dots: true,
-		nav: false,
+    jQuery(document).ready(function($) {
+        // Initialize slick slider for the first active tab
+        $('#v-pills-tabContent .tab-pane.show .slick-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false,
+        });
+    
+        // Reinitialize slick slider when switching tabs
+        $('button[data-bs-toggle="pill"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("data-bs-target"); // Get the target tab pane
+            $(target).find('.slick-slider').not('.slick-initialized').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false,
+            });
+        });
     });
 
     const child_rate = parseFloat($('#child_rate').val());
