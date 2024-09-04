@@ -40,8 +40,7 @@ jQuery(document).ready(function($) {
 		if (scroll >= 100) sticky.addClass('header-fixed');
 		else sticky.removeClass('header-fixed');
 	});
-
-
+    
 	const text = "E=Mc²";
     const $element = $("#rj-math-formula");
     let index = 0;
@@ -162,8 +161,6 @@ jQuery(document).ready(function($) {
     // Initial calculation to set the initial total cost
     updateTotalCost();
 });
-
-
 
 $(function(){
     var dtToday = new Date();

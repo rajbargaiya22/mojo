@@ -255,9 +255,67 @@ function rj_mojo_booking_form() {
         
         wp_mail('kgorle@dhaninfo.biz', $admin_subject, $admin_body, $headers);
         // wp_mail('nehall.goyal@gmail.com', $admin_subject, $admin_body, $headers);
-        wp_mail('mojo.nagpur@gmail.com', $admin_subject, $admin_body, $headers);
+        //wp_mail('mojo.nagpur@gmail.com', $admin_subject, $admin_body, $headers);
 
-        wp_redirect(home_url());
+
+         $order = wc_create_order();
+	$product_id = 70;
+	$order->add_product(wc_get_product($product_id), 2); 
+
+	$name_parts = explode(' ', $name);
+    $first_name = isset($name_parts[0]) ? $name_parts[0] : '';
+    $last_name = isset($name_parts[1]) ? $name_parts[1] : '';
+
+	// Set the billing address.
+	$billing_address = array(
+		'first_name' => $first_name,
+		'last_name'  => $last_name,
+		'company'    => '',
+		'email'      => $email,
+		'phone'      => $contact_no,
+		'address_1'  => '',
+		'address_2'  => '',
+		'city'       => 'Nagpur',
+		'state'      => 'MH',
+		'postcode'   => '',
+		'country'    => 'IN',
+	);
+
+	$order->set_address($billing_address, 'billing');
+
+
+	$shipping_address = array(
+		'first_name' => $first_name,
+		'last_name'  => $last_name,
+		'company'    => '',
+		'email'      => $email,
+		'phone'      => $contact_no,
+		'address_1'  => '',
+		'address_2'  => '',
+		'city'       => 'Nagpur',
+		'state'      => 'MH',
+		'postcode'   => '',
+		'country'    => 'IN',
+	);
+	
+	$order->set_address($shipping_address, 'shipping');
+
+	$order->calculate_totals();
+
+    // $order->add_product(wc_get_product('70'), 1, [
+    //     'subtotal' => $total_cost,
+    //     'total'    => $total_cost,
+    // ]);
+    $order->set_total($total_cost);
+
+
+    $order->update_status('pending', 'Order created for booking visit');
+    $order->save();
+    wc_reduce_stock_levels($order->get_id());
+    WC()->mailer()->emails['WC_Email_Customer_Processing_Order']->trigger($order->get_id());
+    WC()->mailer()->emails['WC_Email_New_Order']->trigger($order->get_id());
+
+        // wp_redirect(home_url());
         exit;
 
     }

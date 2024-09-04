@@ -114,6 +114,4 @@ $rj_ticket_bg = get_theme_mod('rj_mojo_make_ideas_image', get_template_directory
 	</div>
 </section>
 
-
-
 <?php get_footer();

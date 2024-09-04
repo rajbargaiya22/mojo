@@ -111,7 +111,7 @@ function rj_mojo_customizer_register( $wp_customize ){
 	)));
 
 	$wp_customize->add_setting('rj_mojo_product_facebook_url',array(
-		'default'=> '#',
+		'default'=> 'https://www.facebook.com/default',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('rj_mojo_product_facebook_url',array(

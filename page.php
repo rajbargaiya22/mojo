@@ -10,7 +10,7 @@
  * @package rj-mojo
  */
 
-get_header(); ?>
+get_header('two'); ?>
 
 <?php do_action( 'rj_mojo_page_post_top' ); ?>
 
@@ -19,7 +19,8 @@ get_header(); ?>
       <div class="row">
         <div class="col-md-8">
           <?php while ( have_posts() ) : the_post();
-              get_template_part( 'template-parts/content-page');
+              // get_template_part( 'template-parts/content-page');
+              the_content();
           endwhile; ?>
         </div>
         <aside class="col-md-4">

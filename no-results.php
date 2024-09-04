@@ -4,6 +4,7 @@
  *
  * @package rj-mojo
  */
+get_header('two');
 ?>
 
 <section class=" py-3 py-lg-5">

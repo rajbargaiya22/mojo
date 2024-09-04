@@ -21,17 +21,20 @@
             <h2 class="rj-visit-text"><?php esc_html_e('Book Visit', 'rj-mojo'); ?></h2></a>
         </div> */?>
         <div class="rj-imagination-fly">	
-            <?php get_template_part('template-parts/star'); ?>
+            <?php // get_template_part('template-parts/star'); ?>
+            <img src="<?php echo esc_url(get_theme_mod('rj_mojo_star_image', get_template_directory_uri() . "/assets/images/star.gif")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" title="Star Image">
             <h2><?php echo esc_html(get_theme_mod('rj_mojo_star_text','Let your imagination fly'));?></h2>
         </div>
 
-        <div class="rj-menus-header d-flex align-items-center <?php if( get_theme_mod( 'rj_mojo_sticky_header', true) == 1) { ?> header-sticky"<?php } else { ?>close-sticky <?php } ?>">
-        <a href="<?php echo esc_url(get_theme_mod('rj_mojo_product_facebook_url',false));?>"> 
-            <img src="<?php echo esc_url(get_theme_mod('rj_mojo_facebook_image', get_template_directory_uri() . "/assets/images/facebook.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" title="Facebook Image">
+        <div class="rj-menus-header d-flex align-items-center 
+        <?php if( get_theme_mod( 'rj_mojo_sticky_header', true) == 1) { echo 'header-sticky'; }else{ echo 'close-sticky'; } ?>">
+        <a href="https://www.facebook.com/profile.php?id=61565623700874&sk=about" target="_blank">
+            <img src="<?php echo esc_url(get_theme_mod('rj_mojo_facebook_image', get_template_directory_uri() . '/assets/images/facebook.png')); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', 'Facebook Image')); ?>" title="Facebook Image">
         </a>
-        <a href="<?php echo esc_url(get_theme_mod('rj_mojo_product_instagram_url',false));?>">
-            <img src="<?php echo esc_url(get_theme_mod('rj_mojo_instagram_image', get_template_directory_uri() . "/assets/images/instagram.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" title="Instagram Image">
+        <a href="https://www.instagram.com/mojonagpur/?hl=en" target="_blank">
+            <img src="<?php echo esc_url(get_theme_mod('rj_mojo_instagram_image', get_template_directory_uri() . '/assets/images/instagram.png')); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', 'Instagram Image')); ?>" title="Instagram Image">
         </a>
+
             <?php /* get_template_part('template-parts/header/menu'); */?>
         </div>
 
@@ -52,19 +55,12 @@
                 <li><?php echo esc_html(get_theme_mod('rj_mojo_mathematics_text','Mathematics'));?></li>
             </ul>	
            <img src="<?php echo esc_url(get_theme_mod('rj_mojo_chemical_image', get_template_directory_uri() . "/assets/images/chemical.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" title="Chemical Image">
-            
         </div>
-        
         <div class="rj-world-text">
-
             <div class="rotating-earth">
-
                 <img class="world-text" src="<?php echo esc_url(get_theme_mod('rj_mojo_world_image', get_template_directory_uri() . "/assets/images/world-text.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" title="World Image">
             </div>
-
-            
             <?php // get_template_part('template-parts/earth'); ?>
-            
             <h2><?php echo esc_html(get_theme_mod('rj_mojo_world_text','Changing the world is childs play'));?></h2>
         </div>
         
@@ -76,7 +72,8 @@
             <div class="maths-formula">
                 <!-- <p id="rj-math-formula">E=Mc<sup>2</sup></p> -->
                 <p id="rj-math-formula"></p>
-                <?php get_template_part('template-parts/formula'); ?>
+                <?php //get_template_part('template-parts/formula'); ?>
+                <img src="<?php echo esc_url(get_theme_mod('rj_mojo_formula_image', get_template_directory_uri() . "/assets/images/rj-formula.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" title="Formula Image">
             </div>
         </div>
     </div>
@@ -84,6 +81,7 @@
     <img src="<?php echo esc_url(get_theme_mod('rj_mojo_about_image1', get_template_directory_uri() . "/assets/images/bottom-image.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title1', true)); ?>" title="about Image"  class="bottom-image">
         <img src="<?php echo esc_url(get_theme_mod('rj_mojo_about_image2', get_template_directory_uri() . "/assets/images/rocket.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title2', true)); ?>" title="about Image" class="rocket-image">
     </div>
+    
 </section>
 
 

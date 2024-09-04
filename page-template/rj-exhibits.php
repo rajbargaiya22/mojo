@@ -21,7 +21,6 @@ $category = get_queried_object();
             'taxonomy' => 'exhibit_category',
             'hide_empty' => false, 
             'order' => 'ASC', 
-            'parent'     => 0 
         ));
         if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
             foreach ( $terms as $term ) {
