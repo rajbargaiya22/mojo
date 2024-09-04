@@ -5,10 +5,10 @@
  */
 
 if ( class_exists( 'WP_Customize_Control' ) ) {
-	class RJ_BOOKMARKS_TOGGLE_SWITCH_CUSTOM_CONTROL extends WP_Customize_Control {
-		public $type = 'rj_bookmarks_toogle_switch';
+	class rj_mojo_TOGGLE_SWITCH_CUSTOM_CONTROL extends WP_Customize_Control {
+		public $type = 'rj_mojo_toogle_switch';
 		public function enqueue(){
-			wp_enqueue_style( 'rj_bookmarks_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/rj-customizer/assets/rj-customizer.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'rj_mojo_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/rj-customizer/assets/rj-customizer.css', array(), '1.0', 'all' );
 		}
 		public function render_content(){
 		?>
@@ -32,10 +32,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 //separator
 if ( class_exists( 'WP_Customize_Control' ) ) {
-	class RJ_BOOKMARKS_SEPARATOR extends WP_Customize_Control {
+	class rj_mojo_SEPARATOR extends WP_Customize_Control {
 		public function render_content(){
 		?>
-			<div class="rj-bookmarks-custom-separator">
+			<div class="rj-mojo-custom-separator">
 				<?php echo esc_html( $this->label ); ?>
 			</div>
 		<?php

@@ -3,7 +3,7 @@
 * Templates Name: RJ Homepage
 *
 *
-* @package rj-bookmarks
+* @package rj-mojo
 */
 
 if ( ! defined( 'ABSPATH' ) ) {

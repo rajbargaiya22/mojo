@@ -16,28 +16,28 @@ $phoneNumber = "8010670818";
 				<div class="row justify-content-center">
 					<div class="col-xl-4 col-lg-4 col-md-6 pb-lg-0 pb-3">
 						<div class="rj-location-img">
-							<img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_location_image', get_template_directory_uri() . "/assets/images/location.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="Location Image">
+							<img src="<?php echo esc_url(get_theme_mod('rj_mojo_location_image', get_template_directory_uri() . "/assets/images/location.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" title="Location Image">
 						</div>
-						<h5><?php echo esc_html(get_theme_mod('rj_bookmarks_location_text','Location'));?></h5>
+						<h5><?php echo esc_html(get_theme_mod('rj_mojo_location_text','Location'));?></h5>
 						<a href="http://maps.google.com/maps?q=Dhandhania House East High Court Civil Lines 440001 Nagpur" target="_blank">
-						<?php echo (get_theme_mod('rj_bookmarks_address_text','Museum Of Joy <br> Dhandhania House East High Court Civil Lines 440001 Nagpur'));?></a>
+						<?php echo (get_theme_mod('rj_mojo_address_text','Museum Of Joy <br> Dhandhania House East High Court Civil Lines 440001 Nagpur'));?></a>
 					</div><?php /*
 					<div class="col-xl-4 col-lg-4 col-md-6">
 						<div class="rj-time-img">
 							<img src=<?php echo get_template_directory_uri() . "/assets/images/time.png" ?> alt="world">
 						</div>
-						<h5><?php esc_html_e('Time', 'rj-bookmarks'); ?></h5>
-						<p><?php esc_html_e('Mon - 2:00pm to 7:30pm Tue - Sun 11:00 am to 7:30 pm', 'rj-bookmarks'); ?></p> 
+						<h5><?php esc_html_e('Time', 'rj-mojo'); ?></h5>
+						<p><?php esc_html_e('Mon - 2:00pm to 7:30pm Tue - Sun 11:00 am to 7:30 pm', 'rj-mojo'); ?></p> 
 					</div>*/?>
 					<div class="col-xl-4 col-lg-4 col-md-6">
 						<div class="rj-contact-img">
-							<img src="<?php echo esc_url(get_theme_mod('rj_bookmarks_contact_image', get_template_directory_uri() . "/assets/images/contact.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_bookmarks_slide_title', true)); ?>" title="contact Image">
+							<img src="<?php echo esc_url(get_theme_mod('rj_mojo_contact_image', get_template_directory_uri() . "/assets/images/contact.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_slide_title', true)); ?>" title="contact Image">
 						</div>
-						<h5><?php echo esc_html(get_theme_mod('rj_bookmarks_contact_text','Contact'));?></h5>
+						<h5><?php echo esc_html(get_theme_mod('rj_mojo_contact_text','Contact'));?></h5>
 						<div class="rj-phone-number"><a href="tel:<?php echo $phoneNumber; ?>"><?php echo $phoneNumber; ?></a></div>
 						<div class="rj-mail-text">
-						<a href="mailto:<?php echo esc_attr(get_theme_mod('rj_bookmarks_email_address',''));?>">
-							<?php echo esc_html(get_theme_mod('rj_bookmarks_email_address','mojo.nagpur@gmail.com'));?></a>
+						<a href="mailto:<?php echo esc_attr(get_theme_mod('rj_mojo_email_address',''));?>">
+							<?php echo esc_html(get_theme_mod('rj_mojo_email_address','mojo.nagpur@gmail.com'));?></a>
 						</div>
 						<!-- Button trigger modal -->
 						<button type="button" class="contact-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -58,8 +58,8 @@ $phoneNumber = "8010670818";
 
 												<div class="d-flex align-items-center gap-2">
 													<span>
-														<label for="contact_no">Mobile</label>
-														<input type="tel" id="contact_no" name="contact_no" placeholder="Enter mobile number" required>
+														<label for="mobile">Mobile</label>
+														<input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
 													</span>
 													<span>
 														<label for="email">Email</label>
@@ -81,8 +81,10 @@ $phoneNumber = "8010670818";
 														<textarea id="message" name="message" placeholder="Enter any additional message" required></textarea>
 													</span>
 												</div>
+
+												<input type="hidden" name="contact_form_nonce" value="<?php echo wp_create_nonce('submit_contact_form'); ?>">
 												<div class="modal-footer">
-													<button class="rj-submit-button" type="submit" name="submit_booking">Submit</button>
+													<button class="rj-submit-button" type="submit" name="submit_booking"  value="<?php echo wp_create_nonce('rj_mojo_contact_us_form'); ?>">Submit</button>
 												</div>
 										</form>
 									</div>
@@ -109,7 +111,7 @@ $phoneNumber = "8010670818";
 			<img src=<?php echo get_template_directory_uri() . "/assets/images/copyright.png" ?> alt="copyright">
 		</div>
 	  </footer>
-		<?php do_action('rj_bookmarks_body_bottom');
+		<?php do_action('rj_mojo_body_bottom');
 		wp_footer(); ?>
 	</body>
 </html>

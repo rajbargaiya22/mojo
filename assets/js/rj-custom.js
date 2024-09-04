@@ -1,11 +1,11 @@
 
 // menus
-function rj_bookmarks_menu_open_nav() {
-	window.rj_bookmarks_responsiveMenu=true;
+function rj_mojo_menu_open_nav() {
+	window.rj_mojo_responsiveMenu=true;
 	jQuery(".sidenav").addClass('show');
 }
-function rj_bookmarks_menu_close_nav() {
-	window.rj_bookmarks_responsiveMenu=false;
+function rj_mojo_menu_close_nav() {
+	window.rj_mojo_responsiveMenu=false;
  	jQuery(".sidenav").removeClass('show');
 }
 
@@ -40,8 +40,7 @@ jQuery(document).ready(function($) {
 		if (scroll >= 100) sticky.addClass('header-fixed');
 		else sticky.removeClass('header-fixed');
 	});
-
-
+    
 	const text = "E=Mc²";
     const $element = $("#rj-math-formula");
     let index = 0;
@@ -73,9 +72,25 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($) {
-    jQuery('.slick-slider').slick({
-        dots: true,
-		nav: false,
+    jQuery(document).ready(function($) {
+        // Initialize slick slider for the first active tab
+        $('#v-pills-tabContent .tab-pane.show .slick-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false,
+        });
+    
+        // Reinitialize slick slider when switching tabs
+        $('button[data-bs-toggle="pill"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("data-bs-target"); // Get the target tab pane
+            $(target).find('.slick-slider').not('.slick-initialized').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false,
+            });
+        });
     });
 
     const child_rate = parseFloat($('#child_rate').val());
@@ -146,8 +161,6 @@ jQuery(document).ready(function($) {
     // Initial calculation to set the initial total cost
     updateTotalCost();
 });
-
-
 
 $(function(){
     var dtToday = new Date();

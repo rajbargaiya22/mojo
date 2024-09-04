@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
            <figure class="entry-attachment">
              <div class="attachment">
                <?php
-               $attachment_size = apply_filters('rj_bookmarks_attachment_size', array(1200, 1200));
+               $attachment_size = apply_filters('rj_mojo_attachment_size', array(1200, 1200));
                printf('<a href="%1$s" rel="attachment" title="%2$s">%2$s</a>',
                  esc_url(wp_get_attachment_url()),
                  wp_get_attachment_image(get_the_ID(), $attachment_size)

@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.6.7; wp-6.5\n"
-"X-Domain: rj-bookmarks"
+"X-Domain: rj-mojo"
 
 #: inc/widgets/posts-categories.php:74
 msgid " Articles"

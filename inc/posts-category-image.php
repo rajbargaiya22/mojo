@@ -1,8 +1,8 @@
 <?php
 
-if ( ! class_exists( 'RJ_BOOKMARKS_POSTS_CATEGORY_IMAGE' ) ) {
+if ( ! class_exists( 'rj_mojo_POSTS_CATEGORY_IMAGE' ) ) {
 
-class RJ_BOOKMARKS_POSTS_CATEGORY_IMAGE {
+class rj_mojo_POSTS_CATEGORY_IMAGE {
 
   public function __construct() {
     //
@@ -13,15 +13,15 @@ class RJ_BOOKMARKS_POSTS_CATEGORY_IMAGE {
   * @since 1.0.0
  */
  public function init() {
-   add_action( 'category_add_form_fields', array ( $this, 'rj_bookmarks_add_category_image' ), 10, 2 );
-   add_action( 'created_category', array ( $this, 'rj_bookmarks_save_category_image' ), 10, 2 );
-   add_action( 'category_edit_form_fields', array ( $this, 'rj_bookmarks_update_category_image' ), 10, 2 );
-   add_action( 'edited_category', array ( $this, 'rj_bookmarks_updated_category_image' ), 10, 2 );
-   add_action( 'admin_enqueue_scripts', array( $this, 'rj_bookmarks_load_media' ) );
-   add_action( 'admin_footer', array ( $this, 'rj_bookmarks_add_script' ) );
+   add_action( 'category_add_form_fields', array ( $this, 'rj_mojo_add_category_image' ), 10, 2 );
+   add_action( 'created_category', array ( $this, 'rj_mojo_save_category_image' ), 10, 2 );
+   add_action( 'category_edit_form_fields', array ( $this, 'rj_mojo_update_category_image' ), 10, 2 );
+   add_action( 'edited_category', array ( $this, 'rj_mojo_updated_category_image' ), 10, 2 );
+   add_action( 'admin_enqueue_scripts', array( $this, 'rj_mojo_load_media' ) );
+   add_action( 'admin_footer', array ( $this, 'rj_mojo_add_script' ) );
  }
 
-public function rj_bookmarks_load_media() {
+public function rj_mojo_load_media() {
  wp_enqueue_media();
 }
 
@@ -29,14 +29,14 @@ public function rj_bookmarks_load_media() {
   * Add a form field in the new category page
   * @since 1.0.0
  */
- public function rj_bookmarks_add_category_image ( $taxonomy ) { ?>
+ public function rj_mojo_add_category_image ( $taxonomy ) { ?>
    <div class="form-field term-group">
-     <label for="category-image-id"><?php _e('Image', 'rj-bookmarks'); ?></label>
+     <label for="category-image-id"><?php _e('Image', 'rj-mojo'); ?></label>
      <input type="hidden" id="category-image-id" name="category-image-id" class="custom_media_url" value="">
      <div id="category-image-wrapper"></div>
      <p>
-       <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'rj-bookmarks' ); ?>" />
-       <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'rj-bookmarks' ); ?>" />
+       <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'rj-mojo' ); ?>" />
+       <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'rj-mojo' ); ?>" />
     </p>
    </div>
  <?php
@@ -46,7 +46,7 @@ public function rj_bookmarks_load_media() {
   * Save the form field
   * @since 1.0.0
  */
- public function rj_bookmarks_save_category_image ( $term_id, $tt_id ) {
+ public function rj_mojo_save_category_image ( $term_id, $tt_id ) {
    if( isset( $_POST['category-image-id'] ) && '' !== $_POST['category-image-id'] ){
      $image = $_POST['category-image-id'];
      add_term_meta( $term_id, 'category-image-id', $image, true );
@@ -57,10 +57,10 @@ public function rj_bookmarks_load_media() {
   * Edit the form field
   * @since 1.0.0
  */
- public function rj_bookmarks_update_category_image ( $term, $taxonomy ) { ?>
+ public function rj_mojo_update_category_image ( $term, $taxonomy ) { ?>
    <tr class="form-field term-group-wrap">
      <th scope="row">
-       <label for="category-image-id"><?php _e( 'Image', 'rj-bookmarks' ); ?></label>
+       <label for="category-image-id"><?php _e( 'Image', 'rj-mojo' ); ?></label>
      </th>
      <td>
        <?php $image_id = get_term_meta( $term -> term_id, 'category-image-id', true ); ?>
@@ -71,8 +71,8 @@ public function rj_bookmarks_load_media() {
          <?php } ?>
        </div>
        <p>
-         <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'rj-bookmarks' ); ?>" />
-         <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'rj-bookmarks' ); ?>" />
+         <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'rj-mojo' ); ?>" />
+         <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'rj-mojo' ); ?>" />
        </p>
      </td>
    </tr>
@@ -83,7 +83,7 @@ public function rj_bookmarks_load_media() {
  * Update the form field value
  * @since 1.0.0
  */
- public function rj_bookmarks_updated_category_image ( $term_id, $tt_id ) {
+ public function rj_mojo_updated_category_image ( $term_id, $tt_id ) {
    if( isset( $_POST['category-image-id'] ) && '' !== $_POST['category-image-id'] ){
      $image = $_POST['category-image-id'];
      update_term_meta ( $term_id, 'category-image-id', $image );
@@ -96,7 +96,7 @@ public function rj_bookmarks_load_media() {
  * Add script
  * @since 1.0.0
  */
- public function rj_bookmarks_add_script() { ?>
+ public function rj_mojo_add_script() { ?>
    <script>
      jQuery(document).ready( function($) {
        function ct_media_upload(button_class) {
@@ -143,21 +143,21 @@ public function rj_bookmarks_load_media() {
 
   }
 
-$RJ_BOOKMARKS_POSTS_CATEGORY_IMAGE = new RJ_BOOKMARKS_POSTS_CATEGORY_IMAGE();
-$RJ_BOOKMARKS_POSTS_CATEGORY_IMAGE -> init();
+$rj_mojo_POSTS_CATEGORY_IMAGE = new rj_mojo_POSTS_CATEGORY_IMAGE();
+$rj_mojo_POSTS_CATEGORY_IMAGE -> init();
 
 }
 
 // Hook to add a custom column to the category table
-function rj_bookmarks_post_cat_image($columns) {
+function rj_mojo_post_cat_image($columns) {
     $columns['post_cat_image'] = 'Image'; // Add your column name and label here
     return $columns;
 }
 
-add_filter('manage_edit-category_columns', 'rj_bookmarks_post_cat_image');
+add_filter('manage_edit-category_columns', 'rj_mojo_post_cat_image');
 
 // Display content in the custom column
-function rj_bookmarks_post_cat_image_content($deprecated, $column_name, $term_id) {
+function rj_mojo_post_cat_image_content($deprecated, $column_name, $term_id) {
     if ($column_name === 'post_cat_image') {
         // Get and display your custom data here
         $custom_data = get_term_meta($term_id, 'category-image-id', true);
@@ -166,4 +166,4 @@ function rj_bookmarks_post_cat_image_content($deprecated, $column_name, $term_id
     }
 }
 
-add_action('manage_category_post_cat_image', 'rj_bookmarks_post_cat_image_content', 10, 3);
+add_action('manage_category_post_cat_image', 'rj_mojo_post_cat_image_content', 10, 3);

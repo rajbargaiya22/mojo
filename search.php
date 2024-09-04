@@ -2,7 +2,7 @@
 /**
  * The Template for displaying search results.
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 
 get_header();
@@ -22,11 +22,11 @@ get_template_part('template-parts/breadcrumb'); ?>
 		        $category = isset($_GET['rj-category']) ? sanitize_text_field($_GET['rj-category']) : '';
 		        $location = isset($_GET['rj-location']) ? sanitize_text_field($_GET['rj-location']) : '';
 
-						$rj_bookmarks_paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+						$rj_mojo_paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 						$args = array(
 						    'post_type' => 'post',
-								'paged' => $rj_bookmarks_paged,
+								'paged' => $rj_mojo_paged,
 						);
 
 						if (!empty($search)) {
@@ -181,9 +181,9 @@ get_template_part('template-parts/breadcrumb'); ?>
 			            <div class="rj-post-navigation">
 			                <?php
 			                the_posts_pagination(array(
-			                    'prev_text'          => __('Previous page', 'rj-bookmarks'),
-			                    'next_text'          => __('Next page', 'rj-bookmarks'),
-			                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'rj-bookmarks') . ' </span>',
+			                    'prev_text'          => __('Previous page', 'rj-mojo'),
+			                    'next_text'          => __('Next page', 'rj-mojo'),
+			                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'rj-mojo') . ' </span>',
 			                ));
 			                ?>
 			            </div>

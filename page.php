@@ -7,19 +7,20 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 
-get_header(); ?>
+get_header('two'); ?>
 
-<?php do_action( 'rj_bookmarks_page_post_top' ); ?>
+<?php do_action( 'rj_mojo_page_post_top' ); ?>
 
 <main class="">
     <div class="container rj-page-container">
       <div class="row">
         <div class="col-md-8">
           <?php while ( have_posts() ) : the_post();
-              get_template_part( 'template-parts/content-page');
+              // get_template_part( 'template-parts/content-page');
+              the_content();
           endwhile; ?>
         </div>
         <aside class="col-md-4">
@@ -30,6 +31,6 @@ get_header(); ?>
     </div>
 </main>
 
-<?php do_action( 'rj_bookmarks_page_post_bottom' ); ?>
+<?php do_action( 'rj_mojo_page_post_bottom' ); ?>
 
 <?php get_footer(); ?>

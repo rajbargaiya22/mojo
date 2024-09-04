@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package rj-bookmarks
+ * @package rj-mojo
  */
 
  get_header('two'); 
@@ -14,8 +14,8 @@
         <div class="rj-air-play-main"> 
             <div class="">
                 <div class="rj-air-play-col">
-                    <h2 class="rj-play-heading text-center"><?php echo esc_html(get_theme_mod('rj_bookmarks_air_play_heading', 'Air Play')); ?></h2>
-                    <p class="rj-play-para"><?php echo esc_html(get_theme_mod('rj_bookmarks_air_play_text', 'Ever wondered how planes stay up in the sky? Or how air can hold things up? Discover the exciting atmosphere of flight and physics!')); ?></p>
+                    <h2 class="rj-play-heading text-center"><?php echo esc_html(get_theme_mod('rj_mojo_air_play_heading', 'Air Play')); ?></h2>
+                    <p class="rj-play-para"><?php echo esc_html(get_theme_mod('rj_mojo_air_play_text', 'Ever wondered how planes stay up in the sky? Or how air can hold things up? Discover the exciting atmosphere of flight and physics!')); ?></p>
                     <?php
                     $categories = get_terms(array(
                         'taxonomy' => 'category',
