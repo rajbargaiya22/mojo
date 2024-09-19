@@ -161,6 +161,9 @@ function create_exhibit_category_taxonomy() {
 }
 add_action('init', 'create_exhibit_category_taxonomy');
 
+<<<<<<< HEAD
+?>
+=======
 // dashboard booking table
 function rj_mojo_create_booking_custom_table() {
     global $wpdb;
@@ -535,3 +538,4 @@ add_action('save_post', 'my_save_image_selector');
 
 
 
+>>>>>>> e7bed4a95b39b482b4baaafecafe71073ad2a34a
