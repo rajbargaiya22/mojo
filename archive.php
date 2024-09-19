@@ -14,9 +14,6 @@ $image_3 = get_term_meta($category->term_id, 'exhibit_category-image-id-3', true
 ?>
 
 
-<?php if ( 'product' == get_post_type() ) { ?>
-    
-<?php }else{ ?>
     <section id="rj-air-play">
         <div class="container py-5 position-relative">
             <div class="rj-air-play-main">
@@ -90,8 +87,6 @@ $image_3 = get_term_meta($category->term_id, 'exhibit_category-image-id-3', true
             </div>
         </div>
     </section>
-<?php } ?>
-
-    
+   
 
 <?php get_footer(); ?>

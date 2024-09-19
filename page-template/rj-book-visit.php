@@ -17,24 +17,23 @@ $rj_ticket_bg = get_theme_mod('rj_mojo_make_ideas_image', get_template_directory
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-4">
-			<h2 class="rj-visit-heading"><?php echo esc_html(get_theme_mod('rj_mojo_book_visit_heading','Book Your Visit'));?></h2>
-			<div class="rj-booking" style="background-image:url(<?php echo ($rj_ticket_bg) ?>); padding: clamp(10px, 2vw + 1rem, 50px); background-size: 100% 100%; height:722px">
-				<div class="rj-ticket-logo">
-					<img src="<?php echo esc_url(get_theme_mod('rj_mojo_booking_logo_image', get_template_directory_uri() . "/assets/images/footer-logo.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_booking_logo_slide_title', true)); ?>" title="logo-visit" class="rj-book-logo-img">
-					<h2 class="mt-5 mb-3"><?php echo esc_html(get_theme_mod('rj_mojo_pricing_text','Ticket Pricing'));?></h2>
-					<img src="<?php echo esc_url(get_theme_mod('rj_mojo_booking_child_image', get_template_directory_uri() . "/assets/images/child-img.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_booking_child_title', true)); ?>" title="child" class="rj-ticket-child-img">
-					<p class="rj-chlid-year"><?php echo esc_html(get_theme_mod('rj_mojo_child_year_text','999 onwards for children, 2-17 years'));?></p>
-					<p class="rj-chlid-info"><?php echo esc_html(get_theme_mod('rj_mojo_child_info_text','Children under 12 years must be accompanied by a grown-up'));?></p>
-					<hr>
+				<h2 class="rj-visit-heading"><?php echo esc_html(get_theme_mod('rj_mojo_book_visit_heading','Book Your Visit'));?></h2>
+				<div class="rj-booking" style="background-image:url(<?php echo ($rj_ticket_bg) ?>); padding: clamp(10px, 2vw + 1rem, 50px); background-size: 100% 100%; height:722px">
+					<div class="rj-ticket-logo">
+						<img src="<?php echo esc_url(get_theme_mod('rj_mojo_booking_logo_image', get_template_directory_uri() . "/assets/images/footer-logo.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_booking_logo_slide_title', true)); ?>" title="logo-visit" class="rj-book-logo-img">
+						<h2 class="mt-5 mb-3"><?php echo esc_html(get_theme_mod('rj_mojo_pricing_text','Ticket Pricing'));?></h2>
+						<img src="<?php echo esc_url(get_theme_mod('rj_mojo_booking_child_image', get_template_directory_uri() . "/assets/images/child-img.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_booking_child_title', true)); ?>" title="child" class="rj-ticket-child-img">
+						<p class="rj-chlid-year"><?php echo esc_html(get_theme_mod('rj_mojo_child_year_text','999 onwards for children, 2-17 years'));?></p>
+						<p class="rj-chlid-info"><?php echo esc_html(get_theme_mod('rj_mojo_child_info_text','Children under 12 years must be accompanied by a grown-up'));?></p>
+						<hr>
 
-					<img src="<?php echo esc_url(get_theme_mod('rj_mojo_booking_elder_image', get_template_directory_uri() . "/assets/images/elder-img.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_booking_elder_title', true)); ?>" title="elder" class="rj-ticket-elder-img">
-					<p class="rj-elder-year"><?php echo esc_html(get_theme_mod('rj_mojo_elder_year_text','499 onwards for grown-ups, 18 years.'));?></p>
-					<p class="rj-elder-info"><?php echo esc_html(get_theme_mod('rj_mojo_elder_info_text','All grown-ups must be accompanied by a child'));?></p>
-				</div>
+						<img src="<?php echo esc_url(get_theme_mod('rj_mojo_booking_elder_image', get_template_directory_uri() . "/assets/images/elder-img.png")); ?>" alt="<?php echo esc_attr(get_theme_mod('rj_mojo_booking_elder_title', true)); ?>" title="elder" class="rj-ticket-elder-img">
+						<p class="rj-elder-year"><?php echo esc_html(get_theme_mod('rj_mojo_elder_year_text','499 onwards for grown-ups, 18 years.'));?></p>
+						<p class="rj-elder-info"><?php echo esc_html(get_theme_mod('rj_mojo_elder_info_text','All grown-ups must be accompanied by a child'));?></p>
+					</div>
+				</div>		
 			</div>
 			
-		
-			</div>
 			<div class="col-lg-9 col-md-8"> 
 				<p class="rj-visit-para"><?php /* echo esc_html(get_theme_mod('rj_mojo_book_visit_text','Welcome to our dreamworld for kids! Here, creativity and curiosity thrive. Every corner is an adventure, and every activity sparks wonder. Join us to let your child’s imagination run wild and see their dreams come to life!')); */?>
 				</p> 

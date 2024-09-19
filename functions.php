@@ -185,6 +185,7 @@ function rj_mojo_create_booking_custom_table() {
 
 add_action('init', 'rj_mojo_create_booking_custom_table');
 
+// Booking form
 function rj_mojo_booking_form() {
 
     if (isset($_POST['submit_booking']) && isset($_POST['booking_form_nonce'])) {
@@ -258,13 +259,13 @@ function rj_mojo_booking_form() {
         //wp_mail('mojo.nagpur@gmail.com', $admin_subject, $admin_body, $headers);
 
 
-         $order = wc_create_order();
-	$product_id = 70;
-	$order->add_product(wc_get_product($product_id), 2); 
+        $order = wc_create_order();
+        $product_id = 70;
+        $order->add_product(wc_get_product($product_id), 2); 
 
-	$name_parts = explode(' ', $name);
-    $first_name = isset($name_parts[0]) ? $name_parts[0] : '';
-    $last_name = isset($name_parts[1]) ? $name_parts[1] : '';
+        $name_parts = explode(' ', $name);
+        $first_name = isset($name_parts[0]) ? $name_parts[0] : '';
+        $last_name = isset($name_parts[1]) ? $name_parts[1] : '';
 
 	// Set the billing address.
 	$billing_address = array(
@@ -299,16 +300,8 @@ function rj_mojo_booking_form() {
 	);
 	
 	$order->set_address($shipping_address, 'shipping');
-
 	$order->calculate_totals();
-
-    // $order->add_product(wc_get_product('70'), 1, [
-    //     'subtotal' => $total_cost,
-    //     'total'    => $total_cost,
-    // ]);
     $order->set_total($total_cost);
-
-
     $order->update_status('pending', 'Order created for booking visit');
     $order->save();
     wc_reduce_stock_levels($order->get_id());
@@ -321,6 +314,14 @@ function rj_mojo_booking_form() {
     }
 }
 add_action('wp', 'rj_mojo_booking_form');
+
+
+
+
+
+
+
+
 
 // submit table
 function rj_mojo_create_contact_us_table() {
@@ -348,6 +349,10 @@ function rj_mojo_contact_us_form() {
         if (!wp_verify_nonce($_POST['contact_form_nonce'], 'submit_contact_form')) {
             wp_die('Security check failed');
         }
+
+
+        
+
         global $wpdb;
         $table_name = $wpdb->prefix . 'contact_us';
         // Sanitize input
@@ -508,9 +513,24 @@ add_action('save_post', 'my_save_image_selector');
 
 
 
+// function redirect_to_checkout_from_product_page() {
+//     if (is_product()) {
+//         global $product;
+//         if ($product) {
+//             $cart_url = wc_get_cart_url();
+//             $checkout_url = wc_get_checkout_url();
+//             // $product_id = $product->get_id();
+//             $product_id = 32;
 
+//             // Add product to cart
+//             WC()->cart->add_to_cart($product_id);
 
-
+//             // Redirect to checkout
+//             wp_redirect($checkout_url);
+//             exit;
+//         }
+//     }
+// }
 
 
 

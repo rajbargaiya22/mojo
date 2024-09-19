@@ -9,6 +9,8 @@
 
 ?>
 
+
+<?php /*
 <section id="rj-air-play">
     <div class="container py-5">
         <div class="rj-air-play-main"> 
@@ -60,6 +62,6 @@
         </div>
     </div>
 </section>
-
+*/ ?>
 
 <?php get_footer();
